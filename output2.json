@@ -1,0 +1,643 @@
+{
+  "language": "de",
+  "language_probability": 1,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.0,
+      "text": "Zweites Testgespräch mit Thomas Schachtmaier. Diesmal VW Aktien ohne beabsichtigten Fehler."
+    },
+    {
+      "start": 19.0,
+      "end": 21.0,
+      "text": "Thomas Schachtmaier, Apparat, guten Tag."
+    },
+    {
+      "start": 21.0,
+      "end": 25.0,
+      "text": "Ja, hallo Herr Schachtmaier. Schön, dass wir uns jetzt wieder erreichen."
+    },
+    {
+      "start": 25.0,
+      "end": 29.0,
+      "text": "Sie wollten eine beratungsfreie Aktienorder aufgeben, korrekt?"
+    },
+    {
+      "start": 29.0,
+      "end": 31.0,
+      "text": "Exakt, genau."
+    },
+    {
+      "start": 31.0,
+      "end": 36.0,
+      "text": "Ja, geht hier um die Stammnummer 712345."
+    },
+    {
+      "start": 41.0,
+      "end": 44.0,
+      "text": "Und Sie möchten vom normalen Depot ordern, korrekt?"
+    },
+    {
+      "start": 44.0,
+      "end": 47.0,
+      "text": "Exakt, pro normales Verrechnungskonto, genau."
+    },
+    {
+      "start": 47.0,
+      "end": 49.0,
+      "text": "Wunderbar."
+    },
+    {
+      "start": 49.0,
+      "end": 55.0,
+      "text": "Ihre Order wird ausgeführt gemäß der Ausführungsgrundsätze der APO-Bank durch Execution."
+    },
+    {
+      "start": 55.0,
+      "end": 57.0,
+      "text": "Mhm."
+    },
+    {
+      "start": 57.0,
+      "end": 60.0,
+      "text": "Was möchten Sie ordern?"
+    },
+    {
+      "start": 60.0,
+      "end": 68.0,
+      "text": "Und zwar hätte ich gerne 500 Stück Volkswagen AG Aktien."
+    },
+    {
+      "start": 68.0,
+      "end": 74.0,
+      "text": "Ja, ok. 500 Stück Volkswagen AG, 766403, korrekt?"
+    },
+    {
+      "start": 74.0,
+      "end": 76.0,
+      "text": "Genau."
+    },
+    {
+      "start": 77.0,
+      "end": 82.0,
+      "text": "Dann gehen wir jetzt eben die Kostenpunkte hierzu durch."
+    },
+    {
+      "start": 82.0,
+      "end": 89.0,
+      "text": "Ein Einstiegskosten ergeben sich hieraus 1% bzw. 444,70 Euro."
+    },
+    {
+      "start": 89.0,
+      "end": 96.0,
+      "text": "An laufenden Kosten, Dienstleistungskosten, ergeben sich daraus 0,15% 66,15 Euro per annum."
+    },
+    {
+      "start": 96.0,
+      "end": 102.0,
+      "text": "Und an Ausstiegskosten ergeben sich daraus Dienstleistungskosten 1% bzw. 444,70 Euro,"
+    },
+    {
+      "start": 102.0,
+      "end": 106.0,
+      "text": "sofern der Kurs zu dem Zeitpunkt dann identisch wäre."
+    },
+    {
+      "start": 106.0,
+      "end": 108.0,
+      "text": "Alles klar."
+    },
+    {
+      "start": 108.0,
+      "end": 110.0,
+      "text": "Perfekt."
+    },
+    {
+      "start": 110.0,
+      "end": 112.0,
+      "text": "So, ich gebe hier noch einige Dinge ein."
+    },
+    {
+      "start": 112.0,
+      "end": 120.0,
+      "text": "Und dann würde ich Ihnen gleich die Kostennoten, die Exanfe zukommen lassen."
+    },
+    {
+      "start": 120.0,
+      "end": 122.0,
+      "text": "Mhm."
+    },
+    {
+      "start": 122.0,
+      "end": 128.0,
+      "text": "So, Sie sollten sie in diesem Moment in Ihrem E-Kostkorb finden."
+    },
+    {
+      "start": 128.0,
+      "end": 133.0,
+      "text": "Ja, ich aktualisiere schnell. Da kam es auch schon an. Ich öffne es."
+    },
+    {
+      "start": 133.0,
+      "end": 136.0,
+      "text": "Und genau wie Sie es mir auch gerade vorgelesen haben. Perfekt."
+    },
+    {
+      "start": 136.0,
+      "end": 142.0,
+      "text": "Perfekt. Dann würde ich jetzt die 500 Stück Volkswagen AG Aktien an der Börse platzieren."
+    },
+    {
+      "start": 142.0,
+      "end": 144.0,
+      "text": "Alles klar. Wunderbar."
+    },
+    {
+      "start": 144.0,
+      "end": 149.0,
+      "text": "Ja, dann ist es schon erledigt. Ich wünsche Ihnen einen angenehmen Tag."
+    },
+    {
+      "start": 149.0,
+      "end": 152.0,
+      "text": "Danke sehr. Das gleiche für Sie, Herr van der Laan. Tschüss."
+    },
+    {
+      "start": 152.0,
+      "end": 154.0,
+      "text": "Tschüss."
+    }
+  ],
+  "speaker_segments": [
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 2.0559687500000003,
+      "end": 6.021593750000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 6.03846875,
+      "end": 7.709093750000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 19.25159375,
+      "end": 22.52534375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 22.81221875,
+      "end": 24.38159375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 24.719093750000003,
+      "end": 25.39409375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 25.64721875,
+      "end": 27.250343750000003
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 27.672218750000003,
+      "end": 29.12346875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 30.034718750000003,
+      "end": 30.97971875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 31.45221875,
+      "end": 33.96659375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 34.50659375,
+      "end": 36.19409375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 37.84784375,
+      "end": 38.32034375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 41.25659375,
+      "end": 43.95659375
+    },
+    {
+      "speaker_id": "SPEAKER_01",
+      "start": 41.34096875,
+      "end": 41.54346875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 44.80034375,
+      "end": 47.46659375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 47.922218750000006,
+      "end": 48.479093750000004
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 49.23846875,
+      "end": 51.48284375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 51.820343750000006,
+      "end": 55.094093750000006
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 56.275343750000005,
+      "end": 56.697218750000005
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 58.73909375,
+      "end": 59.81909375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 61.27034375,
+      "end": 64.44284375000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 64.88159375000001,
+      "end": 67.98659375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 68.96534375,
+      "end": 69.28596875000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 69.43784375,
+      "end": 73.87596875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 74.77034375000001,
+      "end": 75.34409375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 78.07784375,
+      "end": 79.07346875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 79.49534375,
+      "end": 81.73971875000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 82.48221875,
+      "end": 83.12346875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 83.76471875,
+      "end": 89.09721875000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 89.19846875,
+      "end": 95.74596875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 96.28596875000001,
+      "end": 102.44534375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 102.56346875000001,
+      "end": 103.76159375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 103.91346875,
+      "end": 105.75284375000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 107.03534375000001,
+      "end": 107.74409375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 108.70596875000001,
+      "end": 109.09409375000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 109.73534375000001,
+      "end": 111.64221875000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 112.63784375,
+      "end": 113.85284375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 114.05534375,
+      "end": 117.78471875000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 118.96596875,
+      "end": 119.77596875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 120.63659375,
+      "end": 121.10909375000001
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 123.28596875000001,
+      "end": 126.71159375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 127.11659375,
+      "end": 127.60596875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 128.82096875000002,
+      "end": 133.30971875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 133.56284375,
+      "end": 136.19534375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 137.00534375,
+      "end": 137.37659375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 137.49471875,
+      "end": 141.37596875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 142.72596875000002,
+      "end": 144.07596875000002
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 144.64971875,
+      "end": 144.95346875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 145.24034375000002,
+      "end": 148.41284375
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 149.35784375,
+      "end": 151.83846875
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 151.95659375,
+      "end": 152.19284375
+    }
+  ],
+  "segments_with_speaker": [
+    {
+      "start": 0.0,
+      "end": 8.0,
+      "text": "Zweites Testgespräch mit Thomas Schachtmaier. Diesmal VW Aktien ohne beabsichtigten Fehler.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 19.0,
+      "end": 21.0,
+      "text": "Thomas Schachtmaier, Apparat, guten Tag.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 21.0,
+      "end": 25.0,
+      "text": "Ja, hallo Herr Schachtmaier. Schön, dass wir uns jetzt wieder erreichen.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 25.0,
+      "end": 29.0,
+      "text": "Sie wollten eine beratungsfreie Aktienorder aufgeben, korrekt?",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 29.0,
+      "end": 31.0,
+      "text": "Exakt, genau.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 31.0,
+      "end": 36.0,
+      "text": "Ja, geht hier um die Stammnummer 712345.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 41.0,
+      "end": 44.0,
+      "text": "Und Sie möchten vom normalen Depot ordern, korrekt?",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 44.0,
+      "end": 47.0,
+      "text": "Exakt, pro normales Verrechnungskonto, genau.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 47.0,
+      "end": 49.0,
+      "text": "Wunderbar.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 49.0,
+      "end": 55.0,
+      "text": "Ihre Order wird ausgeführt gemäß der Ausführungsgrundsätze der APO-Bank durch Execution.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 55.0,
+      "end": 57.0,
+      "text": "Mhm.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 57.0,
+      "end": 60.0,
+      "text": "Was möchten Sie ordern?",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 60.0,
+      "end": 68.0,
+      "text": "Und zwar hätte ich gerne 500 Stück Volkswagen AG Aktien.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 68.0,
+      "end": 74.0,
+      "text": "Ja, ok. 500 Stück Volkswagen AG, 766403, korrekt?",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 74.0,
+      "end": 76.0,
+      "text": "Genau.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 77.0,
+      "end": 82.0,
+      "text": "Dann gehen wir jetzt eben die Kostenpunkte hierzu durch.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 82.0,
+      "end": 89.0,
+      "text": "Ein Einstiegskosten ergeben sich hieraus 1% bzw. 444,70 Euro.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 89.0,
+      "end": 96.0,
+      "text": "An laufenden Kosten, Dienstleistungskosten, ergeben sich daraus 0,15% 66,15 Euro per annum.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 96.0,
+      "end": 102.0,
+      "text": "Und an Ausstiegskosten ergeben sich daraus Dienstleistungskosten 1% bzw. 444,70 Euro,",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 102.0,
+      "end": 106.0,
+      "text": "sofern der Kurs zu dem Zeitpunkt dann identisch wäre.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 106.0,
+      "end": 108.0,
+      "text": "Alles klar.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 108.0,
+      "end": 110.0,
+      "text": "Perfekt.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 110.0,
+      "end": 112.0,
+      "text": "So, ich gebe hier noch einige Dinge ein.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 112.0,
+      "end": 120.0,
+      "text": "Und dann würde ich Ihnen gleich die Kostennoten, die Exanfe zukommen lassen.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 120.0,
+      "end": 122.0,
+      "text": "Mhm.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 122.0,
+      "end": 128.0,
+      "text": "So, Sie sollten sie in diesem Moment in Ihrem E-Kostkorb finden.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 128.0,
+      "end": 133.0,
+      "text": "Ja, ich aktualisiere schnell. Da kam es auch schon an. Ich öffne es.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 133.0,
+      "end": 136.0,
+      "text": "Und genau wie Sie es mir auch gerade vorgelesen haben. Perfekt.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 136.0,
+      "end": 142.0,
+      "text": "Perfekt. Dann würde ich jetzt die 500 Stück Volkswagen AG Aktien an der Börse platzieren.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 142.0,
+      "end": 144.0,
+      "text": "Alles klar. Wunderbar.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 144.0,
+      "end": 149.0,
+      "text": "Ja, dann ist es schon erledigt. Ich wünsche Ihnen einen angenehmen Tag.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 149.0,
+      "end": 152.0,
+      "text": "Danke sehr. Das gleiche für Sie, Herr van der Laan. Tschüss.",
+      "speaker_id": "SPEAKER_00"
+    },
+    {
+      "start": 152.0,
+      "end": 154.0,
+      "text": "Tschüss.",
+      "speaker_id": "SPEAKER_00"
+    }
+  ],
+  "turns": [
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 0.0,
+      "end": 8.0,
+      "text": "Zweites Testgespräch mit Thomas Schachtmaier. Diesmal VW Aktien ohne beabsichtigten Fehler."
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 19.0,
+      "end": 36.0,
+      "text": "Thomas Schachtmaier, Apparat, guten Tag. Ja, hallo Herr Schachtmaier. Schön, dass wir uns jetzt wieder erreichen. Sie wollten eine beratungsfreie Aktienorder aufgeben, korrekt? Exakt, genau. Ja, geht hier um die Stammnummer 712345."
+    },
+    {
+      "speaker_id": "SPEAKER_00",
+      "start": 41.0,
+      "end": 154.0,
+      "text": "Und Sie möchten vom normalen Depot ordern, korrekt? Exakt, pro normales Verrechnungskonto, genau. Wunderbar. Ihre Order wird ausgeführt gemäß der Ausführungsgrundsätze der APO-Bank durch Execution. Mhm. Was möchten Sie ordern? Und zwar hätte ich gerne 500 Stück Volkswagen AG Aktien. Ja, ok. 500 Stück Volkswagen AG, 766403, korrekt? Genau. Dann gehen wir jetzt eben die Kostenpunkte hierzu durch. Ein Einstiegskosten ergeben sich hieraus 1% bzw. 444,70 Euro. An laufenden Kosten, Dienstleistungskosten, ergeben sich daraus 0,15% 66,15 Euro per annum. Und an Ausstiegskosten ergeben sich daraus Dienstleistungskosten 1% bzw. 444,70 Euro, sofern der Kurs zu dem Zeitpunkt dann identisch wäre. Alles klar. Perfekt. So, ich gebe hier noch einige Dinge ein. Und dann würde ich Ihnen gleich die Kostennoten, die Exanfe zukommen lassen. Mhm. So, Sie sollten sie in diesem Moment in Ihrem E-Kostkorb finden. Ja, ich aktualisiere schnell. Da kam es auch schon an. Ich öffne es. Und genau wie Sie es mir auch gerade vorgelesen haben. Perfekt. Perfekt. Dann würde ich jetzt die 500 Stück Volkswagen AG Aktien an der Börse platzieren. Alles klar. Wunderbar. Ja, dann ist es schon erledigt. Ich wünsche Ihnen einen angenehmen Tag. Danke sehr. Das gleiche für Sie, Herr van der Laan. Tschüss. Tschüss."
+    }
+  ]
+}
