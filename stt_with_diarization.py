@@ -227,8 +227,10 @@ def process_call(audio_path: str, language: str = "de") -> Dict[str, Any]:
     #print("\n=== Building speaker turns ===")
     turns = merge_segments_by_speaker(segments_with_speaker)
 
-    return {"turns": turns}
-    '''
+    return {"segments_with_speaker": segments_with_speaker}
+
+    #{"turns": turns}
+    """
     {
         #"language": stt_result["language"],
         #"language_probability": stt_result["language_probability"],
@@ -237,7 +239,7 @@ def process_call(audio_path: str, language: str = "de") -> Dict[str, Any]:
         #"segments_with_speaker": segments_with_speaker,  # Whisper segments + speaker_id
         "turns": turns,                               # merged turns per speaker
     }
-    '''
+    """
 
 if __name__ == "__main__":
     import sys
