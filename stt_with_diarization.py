@@ -1,4 +1,7 @@
 import os
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 import json
 from typing import Dict, Any, List, Optional
 
@@ -10,12 +13,12 @@ import torchaudio
 # 1. Setup faster-whisper
 # -------------------------
 
-MODEL_SIZE = "medium"
+MODEL_SIZE = "large-v2"
 
 whisper_model = WhisperModel(
     MODEL_SIZE,
     device="cpu",      # change to "cuda" on GPU
-    compute_type="int8"
+    compute_type="float32"
 )
 
 
@@ -36,7 +39,7 @@ def transcribe_segments(audio_path: str, language: str = "de") -> Dict[str, Any]
 
     for seg in segments:
         # live-ish console output
-        print(f"[{seg.start:.2f} - {seg.end:.2f}] {seg.text.strip()}", flush=True)
+       # print(f"[{seg.start:.2f} - {seg.end:.2f}] {seg.text.strip()}", flush=True)
 
         segment_list.append(
             {
@@ -211,23 +214,23 @@ def merge_segments_by_speaker(
 # -------------------------
 
 def process_call(audio_path: str, language: str = "de") -> Dict[str, Any]:
-    print("=== Transcribing with faster-whisper ===")
+    #print("=== Transcribing with faster-whisper ===")
     stt_result = transcribe_segments(audio_path, language=language)
 
-    print("\n=== Running diarization with pyannote ===")
+    #print("\n=== Running diarization with pyannote ===")
     spk_segments = diarize_audio(audio_path)
 
-    print("\n=== Assigning speakers to Whisper segments ===")
+    #print("\n=== Assigning speakers to Whisper segments ===")
     segments_with_speaker = assign_speakers_to_segments(stt_result["segments"], spk_segments)
 
-    print("\n=== Building speaker turns ===")
+    #print("\n=== Building speaker turns ===")
     turns = merge_segments_by_speaker(segments_with_speaker)
 
     return {
         "language": stt_result["language"],
-        "language_probability": stt_result["language_probability"],
-        "segments": stt_result["segments"],           # raw Whisper segments
-        "speaker_segments": spk_segments,             # raw diarization segments
+        #"language_probability": stt_result["language_probability"],
+        #"segments": stt_result["segments"],           # raw Whisper segments
+        #"speaker_segments": spk_segments,             # raw diarization segments
         "segments_with_speaker": segments_with_speaker,  # Whisper segments + speaker_id
         "turns": turns,                               # merged turns per speaker
     }
@@ -237,7 +240,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) < 2:
-        print("Usage: python stt_with_diarization.py path/to/audio.(wav|mp3) [output.json]")
+       # print("Usage: python stt_with_diarization.py path/to/audio.(wav|mp3) [output.json]")
         raise SystemExit(1)
 
     audio_file = sys.argv[1]
@@ -248,7 +251,8 @@ if __name__ == "__main__":
     if output_file:
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
-        print(f"\nSaved JSON to {output_file}")
+        #print(f"\nSaved JSON to {output_file}")
     else:
-        print("\n--- FINAL JSON ---")
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        #print("\n--- FINAL JSON ---")
+        #print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(result)
