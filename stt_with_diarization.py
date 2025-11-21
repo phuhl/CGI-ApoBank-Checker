@@ -1,4 +1,5 @@
 import os
+os.environ["TORCH_CPP_LOG_LEVEL"] = "ERROR"
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
