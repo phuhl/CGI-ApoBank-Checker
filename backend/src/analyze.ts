@@ -24,8 +24,14 @@ The following is the transcript:
     textType,
   );
 
+  const fullComplianceResults = complianceResults.map((q) => ({
+    ...q,
+  }));
+
   return {
     textType,
-    complianceResults,
+    compliant: fullComplianceResults.every((q) => q.exists),
+    confident: fullComplianceResults.every((q) => q.confidence >= 0.6),
+    fullComplianceResults,
   };
 };

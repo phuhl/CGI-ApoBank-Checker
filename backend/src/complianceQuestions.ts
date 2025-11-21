@@ -1,5 +1,5 @@
 import checklist from "./checklist.json";
-import { askAiToClassify } from "./askAi";
+import { askAi, askAiToClassify } from "./askAi";
 
 const processQuestion = async (
   q: {
@@ -34,10 +34,47 @@ ${text}
   }
 };
 
+const postProcessQuestion = async (
+  q: {
+    question: string;
+    answeredExists: number;
+    answeredMissing: number;
+  },
+  text: string,
+  tries: number,
+) => {
+  const exists = q.answeredExists > q.answeredMissing;
+  const confidence = (exists ? q.answeredExists : q.answeredMissing) / tries;
+  let textExtract = "";
+
+  if (exists) {
+    textExtract = await askAi(
+      "gpt-4.1",
+      `Finde in dem folgenden Textabschnitt die Stellen, die die folgende
+Compliance-Frage beantworten, und gib sie exakt wieder:
+
+Die Compliance-Frage ist:
+${q.question}
+
+Der Textabschnitt ist:
+${text}
+`,
+    );
+  }
+
+  return {
+    ...q,
+    exists,
+    confidence,
+    textExtract,
+  };
+};
+
 export const checkComplianceQuestions = async (
   text: string,
   textType: string,
 ) => {
+  const tries = 3;
   const requiredQuestions = (
     checklist[textType] as { description: string }[]
   ).map((q) => ({
@@ -48,10 +85,13 @@ export const checkComplianceQuestions = async (
 
   await Promise.all(
     requiredQuestions.flatMap((q) =>
-      Array.from({ length: 3 }).map(
+      Array.from({ length: tries }).map(
         async (_) => await processQuestion(q, text),
       ),
     ),
   );
-  return requiredQuestions;
+
+  return Promise.all(
+    requiredQuestions.map((q) => postProcessQuestion(q, text, tries)),
+  );
 };

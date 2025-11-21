@@ -159,6 +159,17 @@ export const askAiToClassify = async (
   //  return response;
 };
 
+export const askAi = async (model: OpenAiModelName, prompt: string) => {
+  const response = await runRequest(model, {
+    input: prompt,
+  });
+
+  return response.output_text.trim();
+
+  //  const response = await runRequest(prompt, answerOptions);
+  //  return response;
+};
+
 export const getTranscript = async (fileName: string) => {
   const client = new OpenAI({ apiKey: openAiApiKey });
   const res = await client.audio.transcriptions.create({
