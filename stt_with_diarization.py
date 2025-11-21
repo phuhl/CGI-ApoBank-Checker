@@ -10,12 +10,12 @@ import torchaudio
 # 1. Setup faster-whisper
 # -------------------------
 
-MODEL_SIZE = "medium"
+MODEL_SIZE = "large-v2"
 
 whisper_model = WhisperModel(
     MODEL_SIZE,
     device="cpu",      # change to "cuda" on GPU
-    compute_type="int8"
+    compute_type="float16"
 )
 
 
