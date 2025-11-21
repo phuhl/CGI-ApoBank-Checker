@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload MP3</title>
+  </head>
+  <body>
+    <h1>Upload MP3</h1>
+
+    <form
+      action="http://localhost:3000/analyze"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" accept=".mp3,audio/mpeg" required />
+      <button type="submit">Upload</button>
+    </form>
+  </body>
+</html>

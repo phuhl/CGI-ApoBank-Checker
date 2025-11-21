@@ -1,0 +1,304 @@
+{
+  "Ohne Beratung – gekürzt": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer."
+    },
+    {
+      "id": "item_2",
+      "description": "2) Hinweis, dass es sich um ein beratungsfreies Geschäft handelt (Pflicht-Hinweis)."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen) - Wertpapier | Wertpapierart | Handelsplatz / Heimatbörse | Limit | Ordertyp |Zeitpunkt der Ausführung | Volumen | Stückelung | Nominalbetrag in Währung (USD, EUR...)\n\nAchtung! Limit | abweichender Handelsplatz | vom Standard abweichende Ordergültigkeit = expliziter Hinweis an Kunde mit Angabe \"auf Kundenwunsch\""
+    },
+    {
+      "id": "item_4",
+      "description": "4) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                               \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_5",
+      "description": "5) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nAuch wenn  Kosten = 0, dann Versand Ex-Ante Kostensimulation + Bestätigung Eingang (z.B.Fondsrückgabe) \nEin Verzicht auf Kundenwunsch ist nicht möglich.\n \nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und  ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWarnhinweis zur Angemessenheit der Transaktion\nBitte beachten Sie, dass die geplante Transaktion möglicherweise nicht für alle Anleger geeignet ist. Bitte nutzen Sie in diesem Fall die Checkliste \"Ohne Beratung ausführlich\" (Punkt 6)."
+    },
+    {
+      "id": "item_6",
+      "description": "6) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ],
+  "Ohne Beratung – ausführlich": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer."
+    },
+    {
+      "id": "item_2",
+      "description": "2) Hinweis, dass es sich um ein beratungsfreies Geschäft handelt (Pflicht-Hinweis)."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Nennung der Ausführungsart: \nEingabe der gewünschten Order ins Kernbankensystem mit dem Hinweis, dass \"Ihre Order gem. der \nAusführungsgrundsätze der apoBank \"Best Execution\" ausgeführt wird. Oder alternativ: \"Wir handeln Ihre Order nach den Grundsätzen der bestmöglichen Ausführung der apoBank.\"\n\nWeitere Hinweise können mitgegeben werden, müssen dann aber richtig sein: \n\"Sie kaufen billigst, ohne Limit, unlimitiert\" bzw. \"Sie verkaufen bestens/ohne Limit/unlimitiert.\"\nDavon abweichend alternativ und nur auf Kundenwunsch Ausführung über und Nennung eines konkreten Handelsplatzes. Auch Zertifikate und Fonds fallen unter die Best-Execution-Regelung.\n\nBeispielsätze  Fonds:\n> \"Sie kaufen 100 Stück DWS Top Dividende über die Fondsgesellschaft ohne Limit\"  oder: \"...gem. unseren Ausführungsgrundsätzen der Best Execution\".\n> \"Die Fondsanteile werden gemäß  unseren Ausführungsgrundsätzen der Best Execution an die Fondsgesellschaft zurückgegeben.\" Aktien/ETF:\n> \"Sie verkaufen gemäß unseren Ausführungsgrundsätzen der \"Best Execution\"  100 Siemens-Aktien.\" \n> Oder: \"Sie verkaufen nach den Grundsätzen der \"bestmöglicher Ausführung\" der apoBank  100 Siemens \nAktien\"                                                                                                                                                                      \n> \"Sie kaufen 100 Siemens-Aktien mit Limit XYZ gültig bis TT.MM. gemäß Ihrem eigenen Wunsch über den Handelsplatz \nFrankfurt.\"      \nZertifikate aus Emission:\n> \"Wir kaufen/zeichnen das Zertifikat im Rahmen unserer Ausführungsgrundsätze der Best Execution.\"                   \noder: \"Wir kaufen/zeichnen das Zertifikat direkt beim Emittenten BNP Paribas.\" Anleihen in USD:\n> \"Die Anleihe notiert in USD und wird hauptsächlich in den USA gehandelt. Aufgrund unserer Best-ExecutionRegelung würden wir es über den Handelsplatz Tradegate handeln. Sind Sie damit einverstanden?\" \nAchtung: Der Kunde darf nicht zur Angabe eines Handelsplatzes aufgefordert werden!"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II einen Betrag > 0% oder > 0 EUR aufweisen                     \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, ist gem. Punkt 6) unten zu verfahren"
+    },
+    {
+      "id": "item_5",
+      "description": "5) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n(z.B. WAI -> ePostkorb, E-Mail oder postalischer Versand). \n\nAuch wenn die Kosten = 0 sind, muss die Ex-Ante Kostensimulation versendet werden und der Eingang muss unter Punkt (7a) bestätigt werden. Ein Verzicht auf Kundenwunsch ist nicht möglich.\n \nVersandoptionen:                                                                                                                                                          \n→ Per E-Mail müssen die Dokumente verschlüsselt sein; beim postalischen Versand muss ein Hinweis auf die verzögerte Ausführung sowie ein weiteres Telefonat mit Sprachaufzeichnung erfolgen."
+    },
+    {
+      "id": "item_6",
+      "description": "5a) Besonderheit bei ETF-Sparplänen: Der Kunde muss vor Abschluss des ETF-Sparplans den Kosten von 1,5% aktiv zustimmen!\n\nMusterfrage: „Die Bankprovision beträgt pro Kauforder 1,5% vom Kurswert ohne Mindestprovision. Stimmen \nSie den Kosten zu?“                                                                                                                                                            \nHinweis zu Bruchstücken und Rundungsdifferenzen (auch bei ISP)\nMustersatz: „Soweit die Sparplanraten nicht ausreichen, um volle Stücke zu erwerben, erwerben Sie entsprechende Bruchstücke in bis zu drei Dezimalstellen nach dem Komma. Die dabei entstehenden \nRundungsdifferenzen können dazu führen, dass der Gegenwert der gelieferten Anteile die eingezogene \nSparplanrate geringfügig unter- bzw. überschreitet. Sind Sie damit einverstanden?“"
+    },
+    {
+      "id": "item_7",
+      "description": "6) Angemessenheitsprüfung (nur ein to do, sofern Warnhinweis erscheint)\nFalls im „Anlegerschutz“ ein Warnhinweis wegen negativer Zielmarktprüfung erscheint:\na) Dieser Warnhinweis muss dem Kunden mitgeteilt werden:\nMustersatz: „Für das beabsichtigte Geschäft verfügen Sie über keine bei uns dokumentierten ausreichenden Kenntnisse und Erfahrungen. Daher ist das beabsichtigte Geschäft nicht angemessen. Möchten Sie es trotzdem durchführen?“ \nb) Der Warnhinweis muss dokumentiert werden, indem Im System ein Begründungstext erfasst wird („Warnhinweis an Kunden erfolgt, Kunde wünscht Ausführung“); danach kann der Status übersteuert werden."
+    },
+    {
+      "id": "item_8",
+      "description": "7) Fragen zu den regulatorischen Dokumenten: \na)Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb)Können wir im Orderprozess fortfahren?\n\nAnmerkung: sollte der Kunde hier den Eingang der Ex-Ante-Simulation nicht bestätigen, könnte man nur in folgenden Fällen dennoch fortfahren, in dem man alle Kosten der Ex-Ante-Simulation (gemäß Punkt II. bis IV. der Ex-Ante-Simulation) mitteilt:\n-sämtliche Verkäufe\n-Käufe ohne weitere regulatorische Dokumente (z.B. Kauf Aktie)."
+    },
+    {
+      "id": "item_9",
+      "description": "8) Mit dem Einverständnis des Kunden können die Orders nun platziert werden. \nOptional macht es Sinn, für die Selbstkontrolle der Einhaltung aller Vorgaben, noch eine Zusammenfassung der Key Facts der o. a. Punkte (2) - (6) vorzunehmen."
+    }
+  ],
+  "Mit Beratung – Zertifikate": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer.\nFolge-Gespräch? -> Hinweis auf Art des Vorgesprächs notwendig:\nBsp: Es handelt sich um ein Folgegespräch nach einer Präsenz- oder telefonischen Beratung vom XX.YY.ZZZZ, in der alle regulatorisch notwendigen Punkte besprochen wurden.“"
+    },
+    {
+      "id": "item_2",
+      "description": "2) Überprüfung der Aktualität der Daten im MiFID-Fragebogen:\nMuster-Fragen (regulatorisch notwendig bei jedem Gespräch):   \n\"Hat sich an folgenden Aspekten seit unserem letzten Gesprächvom XX.YY.ZZZZ etwas geändert...\na) Ihren Kenntnissen und Erfahrungen in bezug auf Finanzinstrumente oder Wertpapierdienstleistungen?\nb) Ihrer finanziellen Situation einschl. Ihrer Verlusttragfähigkeit?  \nc) Ihren Anlagezielen einschl. Ihrer Risikotoleranz?\nd) Ihrer Nachhaltigkeitspräferenz? \n\nBei Erstberatung: Komplette Erarbeitung des MiFID-Fragebogens."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Bei noch nicht angelegter Nachhaltigkeitspräferenz: \nDurchführung einer ESG-Kundenaufklärung und Einholung der Kundenpräferenz (Bestandteile: Definition des Nachhaltigkeitsbegriffes, Beispiele zu den drei Facetten (E, S & G) und Erläuterung der Präferenz-Ausprägungen gem. Wertpapierregulatorik)"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Anlass des Gesprächs nennen. \nBsp.: Kunde möchte 20.000 EUR anlegen oder Berater hat Klumpenrisiken in der Depotstruktur identifiziert."
+    },
+    {
+      "id": "item_5",
+      "description": "5) Durchführung der Anlageberatung und Besprechung der Geeignetheit eines jeden Produktes.\n(Warum ist das Produkt für den Kunden geeignet?)"
+    },
+    {
+      "id": "item_6",
+      "description": "6) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_7",
+      "description": "7) Risiken: \nJe nach Asset-Klasse ergeben sich die folgenden zu nennenden Risiken:\n\n   → strukturierte Produkte: \nKursänderungsrisiko\nLiquiditätsrisiko\nRisiken des Basiswerts\nEmitenttenrisiko (Totalverlustrisiko)"
+    },
+    {
+      "id": "item_8",
+      "description": "8) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?"
+    },
+    {
+      "id": "item_9",
+      "description": "9) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen)"
+    },
+    {
+      "id": "item_10",
+      "description": "10) Fragen zu den regulatorischen Dokumenten: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWICHTIG (bereits unter Punkt 4): sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_11",
+      "description": "11) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ],
+  "Mit Beratung – Fonds": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer.\nFolge-Gespräch? -> Hinweis auf Art des Vorgesprächs notwendig:\nBsp: Es handelt sich um ein Folgegespräch nach einer Präsenz- oder telefonischen Beratung vom XX.YY.ZZZZ, in der alle regulatorisch notwendigen Punkte besprochen wurden.“"
+    },
+    {
+      "id": "item_2",
+      "description": "2) Überprüfung der Aktualität der Daten im MiFID-Fragebogen:\nMuster-Fragen (regulatorisch notwendig bei jedem Gespräch):   \n\"Hat sich an folgenden Aspekten seit unserem letzten Gesprächvom XX.YY.ZZZZ etwas geändert...\na) Ihren Kenntnissen und Erfahrungen in bezug auf Finanzinstrumente oder Wertpapierdienstleistungen?\nb) Ihrer finanziellen Situation einschl. Ihrer Verlusttragfähigkeit?  \nc) Ihren Anlagezielen einschl. Ihrer Risikotoleranz?\nd) Ihrer Nachhaltigkeitspräferenz? \n\nBei Erstberatung: Komplette Erarbeitung des MiFID-Fragebogens."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Bei noch nicht angelegter Nachhaltigkeitspräferenz: \nDurchführung einer ESG-Kundenaufklärung und Einholung der Kundenpräferenz (Bestandteile: Definition des Nachhaltigkeitsbegriffes, Beispiele zu den drei Facetten (E, S & G) und Erläuterung der Präferenz-Ausprägungen gem. Wertpapierregulatorik)"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Anlass des Gesprächs nennen. \nBsp.: Kunde möchte 20.000 EUR anlegen oder Berater hat Klumpenrisiken in der Depotstruktur identifiziert."
+    },
+    {
+      "id": "item_5",
+      "description": "5) Durchführung der Anlageberatung und Besprechung der Geeignetheit eines jeden Produktes.\n(Warum ist das Produkt für den Kunden geeignet?)"
+    },
+    {
+      "id": "item_6",
+      "description": "6) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_7",
+      "description": "7) Risiken: \nJe nach Asset-Klasse ergeben sich die folgenden zu nennenden Risiken:\n\n   → Fonds: \nKursänderungsrisiko\nLiquiditätsrisiko\nRisiken der enthaltenden Vermögenswerte\n\nausländische Wertpapiere (nicht in EURO): zusätzlich Währungsrisiken"
+    },
+    {
+      "id": "item_8",
+      "description": "8) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nWenn  Kosten = 0, dann Versand Ex-Ante Kostensimulation + Bestätigung Eingang (z.B.Fondsrückgabe) \nEin Verzicht auf Kundenwunsch ist nicht möglich.\n \nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?"
+    },
+    {
+      "id": "item_9",
+      "description": "9) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen)\n\nAchtung! Limit | abweichender Handelsplatz | vom Standard abweichende Ordergültigkeit = expliziter Hinweis an Kunde mit Angabe \"auf Kundenwunsch\""
+    },
+    {
+      "id": "item_10",
+      "description": "10) Fragen zu den regulatorischen Dokumenten: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWICHTIG (bereits unter Punkt 4): sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_11",
+      "description": "11) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ],
+  "Mit Beratung – Renten": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer.\nFolge-Gespräch? -> Hinweis auf Art des Vorgesprächs notwendig:\nBsp: Es handelt sich um ein Folgegespräch nach einer Präsenz- oder telefonischen Beratung vom XX.YY.ZZZZ, in der alle regulatorisch notwendigen Punkte besprochen wurden.“"
+    },
+    {
+      "id": "item_2",
+      "description": "2) Überprüfung der Aktualität der Daten im MiFID-Fragebogen:\nMuster-Fragen (regulatorisch notwendig bei jedem Gespräch):   \n\"Hat sich an folgenden Aspekten seit unserem letzten Gesprächvom XX.YY.ZZZZ etwas geändert...\na) Ihren Kenntnissen und Erfahrungen in bezug auf Finanzinstrumente oder Wertpapierdienstleistungen?\nb) Ihrer finanziellen Situation einschl. Ihrer Verlusttragfähigkeit?  \nc) Ihren Anlagezielen einschl. Ihrer Risikotoleranz?\nd) Ihrer Nachhaltigkeitspräferenz? \n\nBei Erstberatung: Komplette Erarbeitung des MiFID-Fragebogens."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Bei noch nicht angelegter Nachhaltigkeitspräferenz: \nDurchführung einer ESG-Kundenaufklärung und Einholung der Kundenpräferenz (Bestandteile: Definition des Nachhaltigkeitsbegriffes, Beispiele zu den drei Facetten (E, S & G) und Erläuterung der Präferenz-Ausprägungen gem. Wertpapierregulatorik)"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Anlass des Gesprächs nennen. \nBsp.: Kunde möchte 20.000 EUR anlegen oder Berater hat Klumpenrisiken in der Depotstruktur identifiziert."
+    },
+    {
+      "id": "item_5",
+      "description": "5) Durchführung der Anlageberatung und Besprechung der Geeignetheit eines jeden Produktes.\n(Warum ist das Produkt für den Kunden geeignet?)"
+    },
+    {
+      "id": "item_6",
+      "description": "6) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_7",
+      "description": "7) Risiken: \nJe nach Asset-Klasse ergeben sich die folgenden zu nennenden Risiken:\n   \n   → Anleihen:\nKursänderungsrisiko\nLiquiditätsrisiko\nBonitätsrisiko\nZinsänderungsrisiko\nEmittentenrisiko (Totalverlustrisiko)\n\nausländische Wertpapiere (nicht in EURO): zusätzlich Währungsrisiken"
+    },
+    {
+      "id": "item_8",
+      "description": "8) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \n a) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?"
+    },
+    {
+      "id": "item_9",
+      "description": "9) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen)\n\nAchtung! Limit | abweichender Handelsplatz | vom Standard abweichende Ordergültigkeit = expliziter Hinweis an Kunde mit Angabe \"auf Kundenwunsch\""
+    },
+    {
+      "id": "item_10",
+      "description": "10) Fragen zu den regulatorischen Dokumenten: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWICHTIG (bereits unter Punkt 4): sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_11",
+      "description": "11) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ],
+  "Mit Beratung – Aktien": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer.\nFolge-Gespräch? -> Hinweis auf Art des Vorgesprächs notwendig:\nBsp: Es handelt sich um ein Folgegespräch nach einer Präsenz- oder telefonischen Beratung vom XX.YY.ZZZZ, in der alle regulatorisch notwendigen Punkte besprochen wurden.“"
+    },
+    {
+      "id": "item_2",
+      "description": "2) Überprüfung der Aktualität der Daten im MiFID-Fragebogen:\nMuster-Fragen (regulatorisch notwendig bei jedem Gespräch):   \n\"Hat sich an folgenden Aspekten seit unserem letzten Gesprächvom XX.YY.ZZZZ etwas geändert...\na) Ihren Kenntnissen und Erfahrungen in bezug auf Finanzinstrumente oder Wertpapierdienstleistungen?\nb) Ihrer finanziellen Situation einschl. Ihrer Verlusttragfähigkeit?  \nc) Ihren Anlagezielen einschl. Ihrer Risikotoleranz?\nd) Ihrer Nachhaltigkeitspräferenz? \n\nBei Erstberatung: Komplette Erarbeitung des MiFID-Fragebogens."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Bei noch nicht angelegter Nachhaltigkeitspräferenz: \nDurchführung einer ESG-Kundenaufklärung und Einholung der Kundenpräferenz (Bestandteile: Definition des Nachhaltigkeitsbegriffes, Beispiele zu den drei Facetten (E, S & G) und Erläuterung der Präferenz-Ausprägungen gem. Wertpapierregulatorik)"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Anlass des Gesprächs nennen. \nBsp.: Kunde möchte 20.000 EUR anlegen oder Berater hat Klumpenrisiken in der Depotstruktur identifiziert."
+    },
+    {
+      "id": "item_5",
+      "description": "5) Durchführung der Anlageberatung und Besprechung der Geeignetheit eines jeden Produktes.\n(Warum ist das Produkt für den Kunden geeignet?)"
+    },
+    {
+      "id": "item_6",
+      "description": "6) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_7",
+      "description": "7) Risiken: \nJe nach Asset-Klasse ergeben sich die folgenden zu nennenden Risiken:\n   → Aktien: \nKursänderungsrisiko\nLiquiditätsrisiko\nLänderrisiko\nEmittentenrisiko (Totalverlustrisiko)\n\nausländische Wertpapiere (nicht in EURO): zusätzlich Währungsrisiken"
+    },
+    {
+      "id": "item_8",
+      "description": "8) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \n a) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?"
+    },
+    {
+      "id": "item_9",
+      "description": "9) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen)\n\nAchtung! Limit | abweichender Handelsplatz | vom Standard abweichende Ordergültigkeit = expliziter Hinweis an Kunde mit Angabe \"auf Kundenwunsch\""
+    },
+    {
+      "id": "item_10",
+      "description": "10) Fragen zu den regulatorischen Dokumenten: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWICHTIG (bereits unter Punkt 4): sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_11",
+      "description": "11) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ],
+  "Mit Beratung – ISP / ETF": [
+    {
+      "id": "item_1",
+      "description": "1) Wiederholung des Kundennamens und der Stamm- oder Depotnummer.\nFolge-Gespräch? -> Hinweis auf Art des Vorgesprächs notwendig:\nBsp: Es handelt sich um ein Folgegespräch nach einer Präsenz- oder telefonischen Beratung vom XX.YY.ZZZZ, in der alle regulatorisch notwendigen Punkte besprochen wurden.“"
+    },
+    {
+      "id": "item_2",
+      "description": "2) Überprüfung der Aktualität der Daten im MiFID-Fragebogen:\nMuster-Fragen (regulatorisch notwendig bei jedem Gespräch):   \n\"Hat sich an folgenden Aspekten seit unserem letzten Gesprächvom XX.YY.ZZZZ etwas geändert...\na) Ihren Kenntnissen und Erfahrungen in bezug auf Finanzinstrumente oder Wertpapierdienstleistungen?\nb) Ihrer finanziellen Situation einschl. Ihrer Verlusttragfähigkeit?  \nc) Ihren Anlagezielen einschl. Ihrer Risikotoleranz?\nd) Ihrer Nachhaltigkeitspräferenz? \n\nBei Erstberatung: Komplette Erarbeitung des MiFID-Fragebogens."
+    },
+    {
+      "id": "item_3",
+      "description": "3) Bei noch nicht angelegter Nachhaltigkeitspräferenz: \nDurchführung einer ESG-Kundenaufklärung und Einholung der Kundenpräferenz (Bestandteile: Definition des Nachhaltigkeitsbegriffes, Beispiele zu den drei Facetten (E, S & G) und Erläuterung der Präferenz-Ausprägungen gem. Wertpapierregulatorik)"
+    },
+    {
+      "id": "item_4",
+      "description": "4) Anlass des Gesprächs nennen. \nBsp.: Kunde möchte 20.000 EUR anlegen oder Berater hat Klumpenrisiken in der Depotstruktur identifiziert."
+    },
+    {
+      "id": "item_5",
+      "description": "5) Durchführung der Anlageberatung und Besprechung der Geeignetheit eines jeden Produktes.\n(Warum ist das Produkt für den Kunden geeignet?)"
+    },
+    {
+      "id": "item_6",
+      "description": "6) Nennung der zugehörigen Kosten (in % oder Euro bzw. anderer Währung):    \n\nZu nennen sind alle Kosten, die in der Ex Ante-Kostensimulation unter Punkt II genannt sind                       \nEinstiegskosten \nlaufende Kosten\nAusstiegskosten                                                                         \n\"Davon\"-Positionen müssen nicht genannt werden.                                                                                                                                                                                            \n\nWICHTIG: sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_7",
+      "description": "6a) Besonderheit bei ETF-Sparplänen: Der Kunde muss vor Abschluss des ETF-Sparplans den Kosten von 1,5% aktiv zustimmen!\n\nMusterfrage: „Die Bankprovision beträgt pro Kauforder 1,5% vom Kurswert ohne Mindestprovision. Stimmen \nSie den Kosten zu?“                                                                                                                                                            \nHinweis zu Bruchstücken und Rundungsdifferenzen (auch bei ISP)\nMustersatz: „Soweit die Sparplanraten nicht ausreichen, um volle Stücke zu erwerben, erwerben Sie entsprechende Bruchstücke in bis zu drei Dezimalstellen nach dem Komma. Die dabei entstehenden \nRundungsdifferenzen können dazu führen, dass der Gegenwert der gelieferten Anteile die eingezogene \nSparplanrate geringfügig unter- bzw. überschreitet. Sind Sie damit einverstanden?“"
+    },
+    {
+      "id": "item_8",
+      "description": "7) Risiken: \nJe nach Asset-Klasse ergeben sich die folgenden zu nennenden Risiken:\n\n   → Fonds:\nKursänderungsrisiko\nLiquiditätsrisiko \nRisiken der enthaltenden Vermögenswerte\n\nausländische Wertpapiere (nicht in EURO): zusätzlich Währungsrisiken"
+    },
+    {
+      "id": "item_9",
+      "description": "8) Hinweis zu Bruchstücken und Rundungsdifferenzen (Hinweis: ETF-Sparpläne sind immer beratungsfrei!)\nMustersatz: „Soweit die Sparplanraten nicht ausreichen, um volle Stücke zu erwerben, erwerben Sie entsprechende Bruchstücke in bis zu drei Dezimalstellen nach dem Komma. Die dabei entstehenden Rundungsdifferenzen können dazu führen, dass der Gegenwert der gelieferten Anteile die eingezogene Sparplanrate geringfügig unter- bzw. überschreitet. Sind Sie damit einverstanden?“"
+    },
+    {
+      "id": "item_10",
+      "description": "9) Generierung der Ex-Ante Kostensimulation und potenziell weiterer regulatorischer Dokumente\n\nVersandoptionen:                                                                                                                                                          \n→ E-Mail = Verschlüsselung Dokumente | Postversand = Hinweis auf  verzögerte Ausführung und ein weiteres Telefonat mit Sprachaufzeichnung\nFragen zum Status der regulatorischen Dokumente: \n a) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?"
+    },
+    {
+      "id": "item_11",
+      "description": "10) Nennung der Ausführungsart:  Best Execution (Betrifft alle Gattungen)"
+    },
+    {
+      "id": "item_12",
+      "description": "11) Fragen zu den regulatorischen Dokumenten: \na) Haben Sie die Dokumente inkl. der Ex-Ante-Kostensimulation erhalten?\nb) Können wir im Orderprozess fortfahren?\n\nWICHTIG (bereits unter Punkt 4): sollte der Kunde im weiteren Gesprächsverlauf den Eingang der Ex-Ante-Simulation nicht bestätigen, kann nur fortgefahren werden, in dem man alle Kosten der Ex-Ante-Simulation mitteilt. \nWurde in dem Fall die komplette ex-Ante über alle Seiten hinweg vorgelesen?"
+    },
+    {
+      "id": "item_13",
+      "description": "12) Mit dem Einverständnis des Kunden können die Orders nun platziert werden."
+    }
+  ]
+}
