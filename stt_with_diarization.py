@@ -1,4 +1,7 @@
 import os
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 import json
 from typing import Dict, Any, List, Optional
 
