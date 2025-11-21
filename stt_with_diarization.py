@@ -15,7 +15,7 @@ MODEL_SIZE = "large-v2"
 whisper_model = WhisperModel(
     MODEL_SIZE,
     device="cpu",      # change to "cuda" on GPU
-    compute_type="uint8"
+    compute_type="int8"
 )
 
 
