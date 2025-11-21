@@ -57,7 +57,7 @@ def transcribe_segments(audio_path: str, language: str = "de") -> Dict[str, Any]
 # 2. Setup pyannote diarization
 # -------------------------
 
-HF_TOKEN = os.getenv("HF_TOKEN")
+HF_TOKEN = "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"
 if HF_TOKEN is None:
     raise RuntimeError(
         "HF_TOKEN environment variable is not set. "
