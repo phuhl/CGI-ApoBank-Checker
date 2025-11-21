@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { ShowData } from "./ShowData";
 
-type UploadProps = {};
-
-export const Upload = (props: UploadProps) => {
+export const Upload = () => {
   const [data, setData] = useState(null);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
   const upload = () => {
@@ -69,7 +67,7 @@ export const Upload = (props: UploadProps) => {
             disabled={loading}
             type="file"
             accept=".mp3,audio/mpeg"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => setFile(e?.target?.files?.[0] || null)}
           />
 
           <button disabled={loading} onClick={upload}>
