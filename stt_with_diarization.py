@@ -13,7 +13,7 @@ import torchaudio
 # 1. Setup faster-whisper
 # -------------------------
 
-MODEL_SIZE = "large-v2"
+MODEL_SIZE = "medium"
 
 whisper_model = WhisperModel(
     MODEL_SIZE,
