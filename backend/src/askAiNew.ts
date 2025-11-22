@@ -1,4 +1,3 @@
-import fs from "fs";
 import OpenAI from "openai";
 import { z } from "zod";
 import { zodTextFormat } from "openai/helpers/zod";
@@ -124,17 +123,35 @@ type PythonResult = {
 };
 
 /**
- * Run the Python stt_with_diarization.py script in the project root
+ * Run the Python stt_with_diarization_new.py script in the project root
  * using the virtualenv: .venv/bin/python3
  */
 const runPythonStt = (audioPath: string): Promise<PythonResult> => {
-  // From backend/src → project root: ../../
+  // Resolve project root: /.../CGI-ApoBank-Checker
   const projectRoot = path.resolve(__dirname, "..", "..");
   const pythonBin = path.join(projectRoot, ".venv", "bin", "python3");
   const scriptPath = path.join(projectRoot, "stt_with_diarization_new.py");
 
+  // Make sure Python gets an absolute path to the audio file
+  const audioAbsPath = path.isAbsolute(audioPath)
+    ? audioPath
+    : path.resolve(audioPath);
+
+  console.log("runPythonStt:", {
+    projectRoot,
+    pythonBin,
+    scriptPath,
+    audioAbsPath,
+  });
+
   return new Promise((resolve, reject) => {
-    const child = spawn(pythonBin, [scriptPath, audioPath]);
+    const child = spawn(pythonBin, [scriptPath, audioAbsPath], {
+      cwd: projectRoot,
+      env: {
+        ...process.env,
+        ORT_LOG_SEVERITY_LEVEL: "3", // silence ONNX warnings
+      },
+    });
 
     let stdout = "";
     let stderr = "";
@@ -148,11 +165,14 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
     });
 
     child.on("error", (err) => {
+      console.error("Failed to start Python process:", err);
       reject(err);
     });
 
     child.on("close", (code) => {
       if (code !== 0) {
+        console.error("Python exited with code:", code);
+        console.error("Python stderr:\n", stderr);
         return reject(
           new Error(
             `Python exited with code ${code}\n\nstderr:\n${stderr}`,
@@ -163,6 +183,14 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
         const parsed = JSON.parse(stdout) as PythonResult;
         resolve(parsed);
       } catch (err) {
+        console.error(
+          "Failed to parse Python JSON output:",
+          err,
+          "\nstdout:\n",
+          stdout,
+          "\nstderr:\n",
+          stderr,
+        );
         reject(
           new Error(
             `Failed to parse Python JSON output: ${
@@ -181,15 +209,11 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
  * - flattens segments_with_speaker into a plain transcript string
  */
 export const getTranscript = async (fileName: string): Promise<string> => {
-  // If fileName is an absolute path, we use it as-is.
-  // If it's relative, it's resolved by Python relative to the Node process cwd
-  // (same as before with fs.createReadStream).
   const result = await runPythonStt(fileName);
   const segments = result.segments_with_speaker ?? [];
 
-  // Easiest: just concatenate all text segments in order
   const transcript = segments.map((s) => s.text).join(" ");
-  console.log("Transcript", transcript)
+  console.log("Transcript", transcript);
   return transcript;
 };
 
@@ -200,4 +224,3 @@ export const getTranscriptWithSpeakers = async (
   const result = await runPythonStt(fileName);
   return result.segments_with_speaker ?? [];
 };
-
