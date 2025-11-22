@@ -9,10 +9,12 @@ const processQuestion = async (
     answeredMissing: number;
   },
   text: string,
+  negativePrompt = false,
 ) => {
-  const result = await askAiToClassify(
-    "gpt-4.1",
-    `
+  if (!negativePrompt) {
+    const result = await askAiToClassify(
+      "gpt-4.1",
+      `
   Du bist ein Compliance-Analyst, der ein Gespräch zwischen einem Bankberater
   und einem Kunden überprüft. Du musst feststellen, ob eine erforderliche
   Compliance-Frage im Gespräch behandelt wurde.
@@ -26,12 +28,37 @@ Die erforderliche Frage ist:
 Das Gespräch ist wie folgt:
 ${text}
 `,
-    ["Ja", "Nein"],
-  );
-  if (result === "Ja") {
-    q.answeredExists += 1;
+      ["Ja", "Nein"],
+    );
+    if (result === "Ja") {
+      q.answeredExists += 1;
+    } else {
+      q.answeredMissing += 1;
+    }
   } else {
-    q.answeredMissing += 1;
+    const result = await askAiToClassify(
+      "gpt-4.1",
+      `
+  Du bist ein Compliance-Analyst, der ein Gespräch zwischen einem Bankberater
+  und einem Kunden überprüft. Du musst feststellen, ob eine
+  Compliance-Frage im Gespräch fehlt.
+
+Antworte mit "Ja", wenn die Frage fehlt, oder mit "Nein", wenn sie
+vorhanden ist.
+
+Die Frage ist:
+"${q.question}"
+
+Das Gespräch ist wie folgt:
+${text}
+`,
+      ["Ja", "Nein"],
+    );
+    if (result === "Nein") {
+      q.answeredExists += 1;
+    } else {
+      q.answeredMissing += 1;
+    }
   }
 };
 
@@ -81,7 +108,7 @@ export const checkComplianceQuestions = async (
   text: string,
   textType: string,
 ) => {
-  const tries = 3;
+  const tries = 4;
   const requiredQuestions = (
     checklist[textType] as { description: string }[]
   ).map((q) => ({
@@ -93,7 +120,7 @@ export const checkComplianceQuestions = async (
   await Promise.all(
     requiredQuestions.flatMap((q) =>
       Array.from({ length: tries }).map(
-        async (_) => await processQuestion(q, text),
+        async (_, i) => await processQuestion(q, text, i % 2 === 1),
       ),
     ),
   );
