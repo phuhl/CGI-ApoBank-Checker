@@ -9,7 +9,7 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from text2speech_func import get_transcript
+from transcription.text2speech_func import get_transcript
 
 
 def process_mp3(file_path: str) -> None:
