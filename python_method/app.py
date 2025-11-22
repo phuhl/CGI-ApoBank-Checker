@@ -9,10 +9,15 @@ from pydantic import BaseModel
 
 from openai import OpenAI
 
-# ---------- کانفیگ ----------
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 
-OPENAI_MODEL_TRANSCRIBE = "whisper-1"      # مدل STT
-OPENAI_MODEL_CHAT = "gpt-4.1-mini"         # یا هر مدلی که اکانتت اجازه می‌دهد
+
+# ---------- config----------
+
+OPENAI_MODEL_TRANSCRIBE = "whisper-1"      
+OPENAI_MODEL_CHAT = "gpt-4.1-mini"         
 
 client = OpenAI()
 
@@ -37,14 +42,24 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],      # برای PoC اوکیه، بعداً میشه محدودش کرد
+    allow_origins=["*"],      
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+# -----------------------------
+#  Static files (front-end)
+# -----------------------------
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# -----------------------------
+#  Main page (index.html)
+# -----------------------------
+@app.get("/", response_class=FileResponse)
+async def serve_frontend():
+    return FileResponse("static/index.html")
 
-# ---------- مدل‌های پاسخ ----------
+# ---------- Antwort model---------
 
 class ChecklistItemResult(BaseModel):
     id: str
@@ -60,10 +75,10 @@ class AnalysisResponse(BaseModel):
     transcript: str
 
 
-# ---------- فانکشن‌های کمکی ----------
+# ---------- ----------
 
 def transcribe_audio_to_text(file_path: Path) -> str:
-    """تبدیل فایل صوتی به متن آلمانی با Whisper."""
+    """transcript mit Whisper."""
     with file_path.open("rb") as f:
         result = client.audio.transcriptions.create(
             model=OPENAI_MODEL_TRANSCRIBE,
@@ -75,7 +90,7 @@ def transcribe_audio_to_text(file_path: Path) -> str:
 
 
 def detect_conversation_type(transcript: str) -> str:
-    """تشخیص نوع مکالمه با LLM."""
+    """تllm erkent welche typen."""
 
     types_description = "\n".join(f"- {t}" for t in CONVERSATION_TYPES)
 
@@ -121,7 +136,7 @@ def evaluate_against_checklist(
     transcript: str,
     conversation_type: str,
 ) -> List[ChecklistItemResult]:
-    """بررسی هر آیتم چک‌لیست با کمک LLM."""
+    """بLLM überprüft jede Item mit checklist."""
 
     checklist = CHECKLISTS[conversation_type]
 
@@ -201,7 +216,7 @@ Nutze ausschließlich die IDs aus der Liste oben.
 
 
 def compute_ampel(items: List[ChecklistItemResult]) -> tuple[str, float]:
-    """محاسبه‌ی Ampel بر اساس درصد آیتم‌های موجود."""
+    """frome the perzent it calculate the person of ampelو"""
     total = len(items)
     if total == 0:
         return "rot", 0.0
@@ -220,7 +235,7 @@ def compute_ampel(items: List[ChecklistItemResult]) -> tuple[str, float]:
     return ampel, coverage
 
 
-# ---------- Endpoint اصلی ----------
+# ---------- ----------
 
 @app.post("/analyze_call/", response_model=AnalysisResponse)
 async def analyze_call(audio_file: UploadFile = File(...)):
@@ -232,7 +247,7 @@ async def analyze_call(audio_file: UploadFile = File(...)):
     suffix = Path(audio_file.filename).suffix or ".wav"
 
     try:
-        # 1) ذخیره‌ی فایل موقت
+        # 1) 
         with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
             temp_path = Path(tmp.name)
             contents = await audio_file.read()
@@ -244,13 +259,13 @@ async def analyze_call(audio_file: UploadFile = File(...)):
         # 3) Typenerkennung
         conversation_type = detect_conversation_type(transcript)
 
-        # 4) بررسی چک‌لیست
+        # 4) 
         items = evaluate_against_checklist(transcript, conversation_type)
 
         # 5) Ampel
         ampel, coverage = compute_ampel(items)
 
-        # 6) پاسخ
+        # 6) 
         return AnalysisResponse(
             conversation_type=conversation_type,
             ampel=ampel,
@@ -265,3 +280,4 @@ async def analyze_call(audio_file: UploadFile = File(...)):
                 temp_path.unlink()
         except Exception:
             pass
+

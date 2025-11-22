@@ -1,13 +1,5 @@
 // keyword_score.ts
 import * as fs from "fs";
-import * as path from "path";
-
-export interface TranscriptSegment {
-  speaker?: string;
-  text: string;
-  // falls noch mehr Felder kommen:
-  [key: string]: unknown;
-}
 
 export type KeywordFile = Record<string, string[]>;
 
@@ -18,24 +10,26 @@ export interface DialogScore {
 
 export type ScoreResult = Record<string, DialogScore>;
 
+/**
+ * Berechnet Keyword-Scores für einen gesamten Text.
+ * keyFile: { dialog_type: [keyword1, keyword2, ...] }
+ * text: kompletter Gesprächstext
+ */
 export function calcKeywordScore(
   keyFile: KeywordFile,
-  transFile: TranscriptSegment[]
+  text: string
 ): ScoreResult {
   const allKeyValues: number[] = [];
   const dialogTypes: string[] = [];
+  const lowerText = text.toLowerCase();
 
   for (const [dialogType, keylist] of Object.entries(keyFile)) {
     dialogTypes.push(dialogType);
     let dialogTypeCount = 0;
 
-    for (const seg of transFile) {
-      const text = (seg.text || "").toLowerCase();
-
-      for (const key of keylist) {
-        if (text.includes(key.toLowerCase())) {
-          dialogTypeCount += 1;
-        }
+    for (const key of keylist) {
+      if (lowerText.includes(key.toLowerCase())) {
+        dialogTypeCount += 1;
       }
     }
 
@@ -58,16 +52,14 @@ export function calcKeywordScore(
   return result;
 }
 
+/**
+ * Liest die Keywords aus einer JSON-Datei und wendet sie auf einen Text an.
+ * keywordsPath: Pfad zu keywords.json
+ * text: kompletter Gesprächstext
+ */
 export function runKeywordScoring(
-  keywordsPath: string,
-  transPath: string
+  keyFile: KeywordFile,
+  text: string
 ): ScoreResult {
-  const keyFileRaw = fs.readFileSync(keywordsPath, "utf8");
-  const transRaw = fs.readFileSync(transPath, "utf8");
-
-  const keyFile: KeywordFile = JSON.parse(keyFileRaw);
-  const transJson = JSON.parse(transRaw);
-  const transFile: TranscriptSegment[] = transJson["segments_with_speaker"];
-
-  return calcKeywordScore(keyFile, transFile);
+  return calcKeywordScore(keyFile, text);
 }
