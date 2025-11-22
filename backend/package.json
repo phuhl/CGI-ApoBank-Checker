@@ -13,7 +13,7 @@
     "build": "npm run clean && mkdir -p dist && run-p build:*",
     "build:node_modules": "cp package{-lock,}.json dist && cd dist && npm ci --omit=dev",
     "build:tsc": "tsc -p tsconfig.json",
-    "dev": "ts-node src/index.ts"
+    "dev": "PATH=$VOLTA_HOME/bin:$PATH VOLTA_HOME=$HOME/.volta ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
