@@ -12,8 +12,12 @@ const port = 3000;
 // Enable CORS for the frontend dev server(s)
 app.use(
   cors({
-    origin: ["http://localhost:5174", "http://localhost:5173","http://217.154.252.215"],
-  })
+    origin: [
+      "http://localhost:5174",
+      "http://localhost:5173",
+      "http://217.154.252.215",
+    ],
+  }),
 );
 
 // Ensure upload directory exists
@@ -45,7 +49,7 @@ app.post("/analyze", upload.single("file"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No MP3 file uploaded" });
   }
-
+  console.log("Got request");
   const transcription = await getTranscript(req.file.path);
 
   const results = await analyze(transcription);

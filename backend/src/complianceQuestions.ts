@@ -1,5 +1,6 @@
 import checklist from "./checklist.json";
-import { askAi, askAiToClassify } from "./askAi";
+import { askAiToClassify, askAiWithSchema } from "./askAi";
+import { z } from "zod";
 
 const processQuestion = async (
   q: {
@@ -48,10 +49,12 @@ const postProcessQuestion = async (
   let textExtract = "";
 
   if (exists) {
-    textExtract = await askAi(
-      "gpt-4.1",
-      `Finde in dem folgenden Textabschnitt die Stellen, die die folgende
-Compliance-Frage beantworten, und gib sie exakt wieder:
+    textExtract = (
+      await askAiWithSchema(
+        "gpt-4.1",
+        `Finde in dem folgenden Textabschnitt die Stellen, die die folgende
+Compliance-Frage beantworten, und gib sie exakt wieder. Antworte nur mit dem
+extract in folgendem JSON-Format: {"extract": "<text extract>"}
 
 Die Compliance-Frage ist:
 ${q.question}
@@ -59,7 +62,11 @@ ${q.question}
 Der Textabschnitt ist:
 ${text}
 `,
-    );
+        z.object({
+          extract: z.string(),
+        }),
+      )
+    ).extract;
   }
 
   return {

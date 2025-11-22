@@ -108,6 +108,23 @@ export const askAi = async (model: OpenAiModelName, prompt: string) => {
   return response.output_text.trim();
 };
 
+export const askAiWithSchema = async <Z extends z.ZodType>(
+  model: OpenAiModelName,
+  prompt: string,
+  format: Z,
+): Promise<z.infer<Z>> => {
+  const fullFormat = z.object({ answer: format });
+  const textFormat = zodTextFormat(fullFormat, "answer");
+
+  const response = await runRequest(model, {
+    input: prompt,
+    text: { format: textFormat },
+  });
+
+  const parsed = JSON.parse(response.output_text) as { answer: z.infer<Z> };
+  return parsed.answer;
+};
+
 export const getTranscript = async (fileName: string) => {
   const client = new OpenAI({ apiKey: openAiApiKey });
   const res = await client.audio.transcriptions.create({
