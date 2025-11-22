@@ -17,8 +17,8 @@ const processQuestion = async (
   und einem Kunden überprüft. Du musst feststellen, ob eine erforderliche
   Compliance-Frage im Gespräch behandelt wurde.
 
-Die Frage muss nicht wörtlich gestellt werden, das Thema der Frage muss jedoch
-behandelt werden.
+Die Frage kann, aber muss nicht, wörtlich gestellt werden, das Thema der Frage
+muss jedoch behandelt werden.
 
 Antworte mit "Ja", wenn die Frage behandelt wurde, oder mit "Nein", wenn sie
  nicht behandelt wurde.
