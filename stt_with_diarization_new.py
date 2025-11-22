@@ -332,21 +332,15 @@ def process_call(audio_path: str, language: str = "de") -> Dict[str, Any]:
 
 if __name__ == "__main__":
     import sys
+    import json
 
     if len(sys.argv) < 2:
-       # print("Usage: python stt_with_diarization.py path/to/audio.(wav|mp3) [output.json]")
+        print("Usage: python stt_with_diarization.py AUDIO_FILE", file=sys.stderr)
         raise SystemExit(1)
 
     audio_file = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) >= 3 else None
 
     result = process_call(audio_file, language="de")
 
-    if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(result, f, ensure_ascii=False, indent=2)
-        #print(f"\nSaved JSON to {output_file}")
-    else:
-        #print("\n--- FINAL JSON ---")
-        #print(json.dumps(result, ensure_ascii=False, indent=2))
-        print(result)
+    # Print JSON to stdout so Node can parse it
+    print(json.dumps(result, ensure_ascii=False))
