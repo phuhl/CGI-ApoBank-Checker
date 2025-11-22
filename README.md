@@ -53,25 +53,21 @@ Schritten verarbeitet:
 
 Die Fragen/Anforderungen können vor dem Upload bearbeitet werden.
 
-## Installation
 
-Mindestvoraussetzung, um die Transkription lokal auf dem Server
-auszuführen:
+## Lokales Setup für den Transkriptor (Server)
 
-1. Repository klonen:
-   ```bash
-   git clone <https://github.com/phuhl/CGI-ApoBank-Checker.git>
-Python-Umgebung erstellen und aktivieren.
-   ```bash
-    cd ~/CGI-ApoBank-Checker
-    .venv/bin/activate
-    python transcription/stt_with_diarization_new.py Order1.mp3 # CLI Output.
-    # Erstellt ein JSON-File und speichert Transkription dort.
-    python transcription/stt_with_diarization_new.py Order1.mp3  order1_output.json
-   ```
-In dieser Umgebung mindestens folgende Pakete installieren:
-- pyannote.audio
-- faster-whisper
+**Voraussetzungen:**
+
+- Du bist auf Linux (z. B. Ubuntu-Server).
+- Du arbeitest im Home-Verzeichnis, z. B. `~` oder `/root`.
+
+Ziel: Nach dem Klonen des Repos sollst du lokal auf dem Server so etwas ausführen können:
+
+```bash
+python transcription/stt_with_diarization_new.py Order1.mp3
+```
+
+
 
 ## Aufgabenzuteilung
 
