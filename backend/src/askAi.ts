@@ -42,67 +42,11 @@ const getModelId = (name: OpenAiModelName) => {
   }
 };
 
-const MODELS_ENDPOINT = "https://openai.inference.de-txl.ionos.com/v1";
-const IONOS_API_TOKEN =
-  "eyJ0eXAiOiJKV1QiLCJraWQiOiI3YjY2NTA0NS1mOTk4LTRiZWMtODk5OC05NDNmYTE5OTNkODUiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJpb25vc2Nsb3VkIiwiaWF0IjoxNzYzNzQ0ODMzLCJjbGllbnQiOiJVU0VSIiwiaWRlbnRpdHkiOnsicHJpdmlsZWdlcyI6WyJBQ0NFU1NfQU5EX01BTkFHRV9MT0dHSU5HIiwiTUFOQUdFX1JFR0lTVFJZIiwiQUNDRVNTX0FORF9NQU5BR0VfQ0VSVElGSUNBVEVTIiwiQUNDRVNTX0FORF9NQU5BR0VfQVBJX0dBVEVXQVkiLCJCQUNLVVBfVU5JVF9DUkVBVEUiLCJBQ0NFU1NfQU5EX01BTkFHRV9ETlMiLCJNQU5BR0VfREFUQVBMQVRGT1JNIiwiQUNDRVNTX0FORF9NQU5BR0VfQUlfTU9ERUxfSFVCIiwiTUFOQUdFX0RCQUFTIiwiQ1JFQVRFX0lOVEVSTkVUX0FDQ0VTUyIsIlBDQ19DUkVBVEUiLCJBQ0NFU1NfQU5EX01BTkFHRV9ORVRXT1JLX0ZJTEVfU1RPUkFHRSIsIkFDQ0VTU19BTkRfTUFOQUdFX1ZQTiIsIkFDQ0VTU19BTkRfTUFOQUdFX0NETiIsIks4U19DTFVTVEVSX0NSRUFURSIsIlNOQVBTSE9UX0NSRUFURSIsIkZMT1dfTE9HX0NSRUFURSIsIkFDQ0VTU19BTkRfTUFOQUdFX01PTklUT1JJTkciLCJBQ0NFU1NfQU5EX01BTkFHRV9LQUFTIiwiQUNDRVNTX1MzX09CSkVDVF9TVE9SQUdFIiwiQUNDRVNTX0FORF9NQU5BR0VfSUFNX1JFU09VUkNFUyIsIklQX0JMT0NLX1JFU0VSVkUiLCJDUkVBVEVfTkVUV09SS19TRUNVUklUWV9HUk9VUFMiXSwidXVpZCI6IjVjOTZkNTEyLTcwYmMtNDg0NC04NDYyLTdkNmUwYzQ2YTUxYSIsInJlc2VsbGVySWQiOjEsInJlZ0RvbWFpbiI6Imlvbm9zLmRlIiwicm9sZSI6InVzZXIiLCJjb250cmFjdE51bWJlciI6MzY3MzIyMzksImlzUGFyZW50IjpmYWxzZX0sImV4cCI6MTc2NDM0OTYzM30.BK7N-SF8DlD6DFVf6kqcTuRa58Ie-VBqzadyUIpXEunw0lgOq0RyOq7De5RLS2W8EHcs9PeyXW3vZDMzEG9zGae61b_278yrtdWsCvQY8m7kWeN-IT_EGQKOpNGFGfgW3ATqk4vu8OMRVo3OvB55LfCvUhkW_P3LmdthiMHw5CrqemcJQJohLlvU_PL64chFsLjeBtfdDa7T9iU-GLBQqbV6ZRDxPxnyw0G8CVv57NwTx4g3E4b36YRjLKWYIHgmMiao-RHCYxWtzLOeP5n06lf-t8dqJdHubAglnd5jpEm1T7-v_GmfRxcFx-Cfr5ioFlyRmsraHNimhkyfTw9H-A";
-
 const runRequest = async (
-  // prompt: string,
-  // answerOptions: [string, ...string[]],
-
   model: OpenAiModelName,
   requestParams: Omit<OpenAI.Responses.ResponseCreateParams, "model">,
   fallbackModels: OpenAiModelName[] = [],
 ) => {
-  // const COMPLETION_ENDPOINT =
-  //   "https://openai.inference.de-txl.ionos.com/v1/chat/completions";
-  // const MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct";
-  // const promptArr = [
-  //   //    { role: "system", content: "You are a helpful assistant." },
-  //   {
-  //     role: "user",
-  //     content: prompt,
-  //   },
-  // ];
-  // const completionResponse = await fetch(COMPLETION_ENDPOINT, {
-  //   method: "POST",
-  //   headers: {
-  //     Authorization: `Bearer ${IONOS_API_TOKEN}`,
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     model: MODEL_NAME,
-  //     messages: promptArr,
-  //     response_format: {
-  //       type: "json_schema",
-  //       json_schema: {
-  //         name: "enum_output",
-  //         schema: {
-  //           type: "object",
-  //           properties: {
-  //             value: {
-  //               type: "string",
-  //               enum: answerOptions,
-  //             },
-  //           },
-  //           required: ["value"],
-  //           additionalProperties: false,
-  //         },
-  //       },
-  //     },
-  //   }),
-  // });
-  // return (
-  //   (await completionResponse.json()) as {
-  //     choices: {
-  //       message?: {
-  //         content: {
-  //           value: string;
-  //         };
-  //       };
-  //     }[];
-  //   }
-  // ).choices[0].message?.content.value as string;
   const client = new OpenAI({
     apiKey: openAiApiKey,
   });
@@ -154,9 +98,6 @@ export const askAiToClassify = async (
   );
 
   return (JSON.parse(response.output_text) as z.infer<typeof zFormat>).answer;
-
-  //  const response = await runRequest(prompt, answerOptions);
-  //  return response;
 };
 
 export const askAi = async (model: OpenAiModelName, prompt: string) => {
@@ -165,9 +106,6 @@ export const askAi = async (model: OpenAiModelName, prompt: string) => {
   });
 
   return response.output_text.trim();
-
-  //  const response = await runRequest(prompt, answerOptions);
-  //  return response;
 };
 
 export const getTranscript = async (fileName: string) => {
