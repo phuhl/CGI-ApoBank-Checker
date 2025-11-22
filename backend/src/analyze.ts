@@ -17,7 +17,8 @@ The following is the transcript:
 
   const textWithReplacedId = text.replaceAll(consultantId, "Consultant");
 
-  const textType = await categorizeText(textWithReplacedId);
+  const { textType, keywordConfidence } =
+    await categorizeText(textWithReplacedId);
 
   const complianceResults = await checkComplianceQuestions(
     textWithReplacedId,
@@ -32,6 +33,7 @@ The following is the transcript:
     textType,
     compliant: fullComplianceResults.every((q) => q.exists),
     confident: fullComplianceResults.every((q) => q.confidence >= 0.6),
+    keywordConfidence,
     fullComplianceResults,
   };
 };

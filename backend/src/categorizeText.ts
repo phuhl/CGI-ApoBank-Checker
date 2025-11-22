@@ -1,10 +1,9 @@
 import { askAiToClassify } from "./askAi";
 import { runKeywordScoring, ScoreResult } from "./get_keyword_score_type";
-import keywords  from "./keywords.json";
+import keywords from "./keywords.json";
 //import * as path from "path";
 
 export const categorizeText = async (text: string) => {
-
   const keywordScores = runKeywordScoring(keywords, text);
 
   const aioutput = await askAiToClassify(
@@ -54,7 +53,7 @@ ${text}
   );
 
   const score = keywordScores[aioutput]?.ratio ?? 0;
-  const keywordConfidence = score * 100;
+  const keywordConfidence = Math.min(1, score * 2) * 100;
 
-  return aioutput;
+  return { textType: aioutput, keywordConfidence };
 };

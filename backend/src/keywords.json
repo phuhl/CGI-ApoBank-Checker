@@ -1,5 +1,5 @@
 {
-  "ohne_beratung_gekuerzt": [
+  "Ohne Beratung – gekürzt": [
     "beratungsfreies geschäft",
     "ohne beratung",
     "ohne anlageberatung",
@@ -14,7 +14,7 @@
     "gekürzte variante"
   ],
 
-  "ohne_beratung_ausfuehrlich": [
+  "Ohne Beratung – ausführlich": [
     "beratungsfreies geschäft",
     "ohne beratung",
     "ohne anlageberatung",
@@ -31,7 +31,7 @@
     "orders werden nach best execution ausgeführt"
   ],
 
-  "mit_beratung_zertifikate": [
+  "Mit Beratung – Zertifikate": [
     "anlageberatung",
     "geeignetheit",
     "geeignetheitserklärung",
@@ -56,7 +56,7 @@
     "rückzahlung abhängig vom basiswert"
   ],
 
-  "mit_beratung_fonds": [
+  "Mit Beratung – Fonds": [
     "anlageberatung",
     "geeignetheit",
     "geeignetheitserklärung",
@@ -83,7 +83,7 @@
     "rücknahme über fondsgesellschaft"
   ],
 
-  "mit_beratung_renten": [
+  "Mit Beratung – Renten": [
     "anlageberatung",
     "geeignetheit",
     "geeignetheitserklärung",
@@ -109,7 +109,7 @@
     "bonitätsrisiko des schuldners"
   ],
 
-  "mit_beratung_aktien": [
+  "Mit Beratung – Aktien": [
     "anlageberatung",
     "geeignetheit",
     "geeignetheitserklärung",
@@ -131,7 +131,7 @@
     "direktanlage in einzelne aktien"
   ],
 
-  "mit_beratung_isp_etf": [
+  "Mit Beratung – ISP / ETF": [
     "anlageberatung",
     "geeignetheit",
     "geeignetheitserklärung",

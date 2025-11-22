@@ -3,6 +3,7 @@ export const ShowData = (props: {
     textType: string;
     compliant: boolean;
     confident: boolean;
+    keywordConfidence: number;
     fullComplianceResults: {
       question: string;
       answeredExists: number;
@@ -142,6 +143,12 @@ export const ShowData = (props: {
             <p style={{ fontSize: "16px", color: "#333", marginTop: "10px" }}>
               Gesprächstyp:{" "}
               <strong style={{ color: "#000" }}>{props.data.textType}</strong>
+            </p>
+            <p style={{ fontSize: "16px", color: "#333", marginTop: "10px" }}>
+              Gesprächstyp Confidence:{" "}
+              <strong style={{ color: "#000" }}>
+                {props.data.keywordConfidence.toFixed(0)}%
+              </strong>
             </p>
             <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>
               Analysiert am:{" "}
@@ -284,7 +291,7 @@ export const ShowData = (props: {
                     </span>
                   </div>
                   <div>
-                    <strong>Vertrauenswürdigkeit:</strong>{" "}
+                    <strong>Confidence:</strong>{" "}
                     <span
                       style={{
                         color: result.confidence >= 0.7 ? "#22c55e" : "#eab308",
