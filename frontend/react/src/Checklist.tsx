@@ -71,6 +71,7 @@ export const Checklist = () => {
                   border: "1px solid #aaa",
                   padding: 6,
                   backgroundColor: "#fff",
+                  color: "black",
                 }}
               >
                 {row.description}
