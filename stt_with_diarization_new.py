@@ -336,11 +336,15 @@ if __name__ == "__main__":
 
     if len(sys.argv) < 2:
         print("Usage: python stt_with_diarization.py AUDIO_FILE", file=sys.stderr)
-        raise SystemExit(1)
+        sys.exit(1)
 
     audio_file = sys.argv[1]
 
+    # Run the full pipeline
     result = process_call(audio_file, language="de")
 
-    # Print JSON to stdout so Node can parse it
-    print(json.dumps(result, ensure_ascii=False))
+    # IMPORTANT:
+    #  - Print exactly ONE JSON object to stdout
+    #  - No other prints to stdout, so Node can parse it
+    json.dump(result, sys.stdout, ensure_ascii=False)
+    sys.stdout.write("\n")
