@@ -130,7 +130,7 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
   // Resolve project root: /.../CGI-ApoBank-Checker
   const projectRoot = path.resolve(__dirname, "..", "..");
   const pythonBin = path.join(projectRoot, ".venv", "bin", "python3");
-  const scriptPath = path.join(projectRoot, "stt_with_diarization_new.py");
+  const scriptPath = path.join(projectRoot, "transcription", "stt_with_diarization_new.py");
 
   // Make sure Python gets an absolute path to the audio file
   const audioAbsPath = path.isAbsolute(audioPath)
