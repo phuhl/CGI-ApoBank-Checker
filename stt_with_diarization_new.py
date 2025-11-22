@@ -77,12 +77,20 @@ diarization_pipeline = Pipeline.from_pretrained(
 def diarize_audio(audio_path: str) -> List[Dict[str, Any]]:
     """
     Run pyannote diarization and return a list of speaker segments.
+
+    We treat all calls as 2-person conversations (advisor + client), so we
+    fix the number of speakers to 2 via min_speakers / max_speakers.
     Uses torchaudio to load the waveform to avoid torchcodec/FFmpeg issues.
     """
     waveform, sample_rate = torchaudio.load(audio_path)
     audio_dict = {"waveform": waveform, "sample_rate": sample_rate}
 
-    output = diarization_pipeline(audio_dict, min_speakers=2, max_speakers=2)
+    # Two-person call: enforce exactly 2 speakers
+    output = diarization_pipeline(
+        audio_dict,
+        min_speakers=2,
+        max_speakers=2,
+    )
 
     spk_segments: List[Dict[str, Any]] = []
     for turn, speaker in output.speaker_diarization:
@@ -100,7 +108,7 @@ def diarize_audio(audio_path: str) -> List[Dict[str, Any]]:
 
 
 # -------------------------
-# 3. Assign speaker to each Whisper segment
+# 3. Assign speaker to each Whisper segment (with splitting)
 # -------------------------
 
 def _overlap(a_start: float, a_end: float, b_start: float, b_end: float) -> float:
@@ -110,50 +118,140 @@ def _overlap(a_start: float, a_end: float, b_start: float, b_end: float) -> floa
     return max(0.0, end - start)
 
 
+def split_segment_by_speaker(
+    seg: Dict[str, Any],
+    spk_segments: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """Split a single Whisper segment into multiple chunks
+    whenever different speakers occur inside its time range.
+
+    Text is divided approximately proportionally to the duration
+    of each speaker's overlap with the segment.
+    """
+    seg_start = seg["start"]
+    seg_end = seg["end"]
+    text = seg["text"]
+    words = text.split()
+
+    if not words:
+        return []
+
+    # Collect all diarization chunks that overlap this Whisper segment
+    overlaps: List[Dict[str, Any]] = []
+    for spk_seg in spk_segments:
+        o_start = max(seg_start, spk_seg["start"])
+        o_end = min(seg_end, spk_seg["end"])
+        if o_end > o_start:
+            overlaps.append(
+                {
+                    "start": o_start,
+                    "end": o_end,
+                    "speaker_id": spk_seg["speaker_id"],
+                }
+            )
+
+    # No overlap at all -> fallback: assign whole segment
+    # to the diarization segment whose center is closest.
+    if not overlaps:
+        mid = 0.5 * (seg_start + seg_end)
+        nearest = min(
+            spk_segments,
+            key=lambda s: abs(0.5 * (s["start"] + s["end"]) - mid),
+        )
+        new_seg = dict(seg)
+        new_seg["speaker_id"] = nearest["speaker_id"]
+        return [new_seg]
+
+    # Only one speaker overlapping -> do not split, just attach speaker_id.
+    if len(overlaps) == 1:
+        new_seg = dict(seg)
+        new_seg["speaker_id"] = overlaps[0]["speaker_id"]
+        return [new_seg]
+
+    # Sort overlaps by time to ensure consistent order
+    overlaps.sort(key=lambda o: o["start"])
+
+    total_dur = sum(o["end"] - o["start"] for o in overlaps)
+    n_words = len(words)
+
+    # Ideal (float) word counts per overlapping chunk
+    raw_counts = [
+        (o["end"] - o["start"]) / total_dur * n_words for o in overlaps
+    ]
+
+    # Start with rounded counts, at least 1 word per chunk
+    int_counts = [max(1, int(round(c))) for c in raw_counts]
+    diff = sum(int_counts) - n_words
+
+    # If we allocated too many words, remove some from the biggest chunks
+    while diff > 0 and any(c > 1 for c in int_counts):
+        idx = max(range(len(int_counts)), key=lambda i: int_counts[i])
+        if int_counts[idx] > 1:
+            int_counts[idx] -= 1
+            diff -= 1
+        else:
+            break
+
+    # If we allocated too few words, add to the longest-duration chunk(s)
+    while diff < 0:
+        idx = max(
+            range(len(int_counts)),
+            key=lambda i: overlaps[i]["end"] - overlaps[i]["start"],
+        )
+        int_counts[idx] += 1
+        diff += 1
+
+    # Actually slice the text according to int_counts
+    out_segments: List[Dict[str, Any]] = []
+    cursor = 0
+    for count, o in zip(int_counts, overlaps):
+        if cursor >= n_words:
+            break
+        take = min(count, n_words - cursor)
+        part_words = words[cursor: cursor + take]
+        cursor += take
+
+        if not part_words:
+            continue
+
+        out_segments.append(
+            {
+                "start": o["start"],
+                "end": o["end"],
+                "text": " ".join(part_words),
+                "speaker_id": o["speaker_id"],
+            }
+        )
+
+    # If there are leftover words (due to rounding), append them
+    # to the last sub-segment.
+    if cursor < n_words and out_segments:
+        out_segments[-1]["text"] = out_segments[-1]["text"].rstrip() + " " + " ".join(
+            words[cursor:]
+        )
+
+    return out_segments
+
+
 def assign_speakers_to_segments(
     segments: List[Dict[str, Any]],
     spk_segments: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
-    """
-    For each Whisper segment, decide which speaker talks there,
-    based on maximum time overlap with diarization segments.
+    """For each Whisper segment, split it into smaller pieces when
+    multiple speakers are present, and attach speaker_id.
+
+    The result is a flat, time-sorted list of segments, each with
+    start, end, text, and speaker_id. This avoids unrealistic
+    60+ second "monologues" when speakers are actually alternating.
     """
     segments_with_speaker: List[Dict[str, Any]] = []
 
     for seg in segments:
-        seg_start = seg["start"]
-        seg_end = seg["end"]
+        sub_segments = split_segment_by_speaker(seg, spk_segments)
+        segments_with_speaker.extend(sub_segments)
 
-        # accumulate overlap duration per speaker
-        overlap_by_speaker: Dict[str, float] = {}
-
-        for spk_seg in spk_segments:
-            ov = _overlap(seg_start, seg_end, spk_seg["start"], spk_seg["end"])
-            if ov <= 0:
-                continue
-            spk_id = spk_seg["speaker_id"]
-            overlap_by_speaker[spk_id] = overlap_by_speaker.get(spk_id, 0.0) + ov
-
-        if overlap_by_speaker:
-            # choose speaker with max overlap
-            best_speaker = max(overlap_by_speaker.items(), key=lambda kv: kv[1])[0]
-        else:
-            # fallback: choose nearest diarization segment by center time
-            mid = 0.5 * (seg_start + seg_end)
-            nearest = min(
-                spk_segments,
-                key=lambda s: abs(0.5 * (s["start"] + s["end"]) - mid),
-            )
-            best_speaker = nearest["speaker_id"]
-
-        new_seg = {
-            "start": seg_start,
-            "end": seg_end,
-            "text": seg["text"],
-            "speaker_id": best_speaker,
-        }
-        segments_with_speaker.append(new_seg)
-
+    # Ensure chronological order
+    segments_with_speaker.sort(key=lambda s: s["start"])
     return segments_with_speaker
 
 
@@ -228,18 +326,9 @@ def process_call(audio_path: str, language: str = "de") -> Dict[str, Any]:
     turns = merge_segments_by_speaker(segments_with_speaker)
 
     return {"segments_with_speaker": segments_with_speaker}
+    # or, if you ever want turns instead:
+    # return {"turns": turns}
 
-    #{"turns": turns}
-    """
-    {
-        #"language": stt_result["language"],
-        #"language_probability": stt_result["language_probability"],
-        #"segments": stt_result["segments"],           # raw Whisper segments
-        #"speaker_segments": spk_segments,             # raw diarization segments
-        #"segments_with_speaker": segments_with_speaker,  # Whisper segments + speaker_id
-        "turns": turns,                               # merged turns per speaker
-    }
-    """
 
 if __name__ == "__main__":
     import sys
