@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import multer, { diskStorage } from "multer";
 import path from "path";
 import fs from "fs";
@@ -7,6 +8,13 @@ import { analyze } from "./analyze";
 
 const app = express();
 const port = 3000;
+
+// Enable CORS for the frontend dev server(s)
+app.use(
+  cors({
+    origin: ["http://localhost:5174", "http://localhost:5173","http://217.154.252.215"],
+  })
+);
 
 // Ensure upload directory exists
 const uploadDir = path.join(process.cwd(), "uploads");
