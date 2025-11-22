@@ -1,9 +1,10 @@
+import { z } from "zod";
 import express from "express";
 import cors from "cors";
 import multer, { diskStorage } from "multer";
 import path from "path";
 import fs from "fs";
-import { getTranscript } from "./askAi";
+import { askAiWithSchema, getTranscript } from "./askAi";
 import { analyze } from "./analyze";
 
 const app = express();
@@ -50,7 +51,34 @@ app.post("/analyze", upload.single("file"), async (req, res) => {
     return res.status(400).json({ error: "No MP3 file uploaded" });
   }
   console.log("Got request");
-  const transcription = await getTranscript(req.file.path);
+  const transcriptions = await Promise.all(
+    new Array(3).fill(0).map((_) => getTranscript(req.file.path)),
+  );
+
+  const transcription = (
+    await askAiWithSchema(
+      "gpt-4.1",
+      `
+You will receive multiple transcriptions of the same audio file. Your job is to
+combine them into a single, most accurate transcription by resolving any
+ differences between them.
+
+Here are the transcriptions:
+${transcriptions
+  .map(
+    (t, i) => `Transcription ${String(i + 1)}:
+${t}`,
+  )
+  .join("\n\n")}
+
+`,
+      z.object({
+        transcription: z.string(),
+      }),
+    )
+  ).transcription;
+
+  // const transcription = await getTranscript(req.file.path);
 
   const results = await analyze(transcription);
 
