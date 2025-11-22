@@ -15,7 +15,11 @@ export const Upload = () => {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open("POST", `http://${location.host}:3000/analyze`, true);
+    xhr.open(
+      "POST",
+      `http://${location.host.split(":")[0]}:3000/analyze`,
+      true
+    );
 
     xhr.onload = () => {
       if (xhr.status === 200) {
