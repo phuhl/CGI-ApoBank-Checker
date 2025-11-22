@@ -3,7 +3,7 @@ import cors from "cors";
 import multer, { diskStorage } from "multer";
 import path from "path";
 import fs from "fs";
-import { getTranscript } from "./askAiNew";
+import { getTranscript } from "./askAi";
 import { analyze } from "./analyze";
 
 const app = express();
