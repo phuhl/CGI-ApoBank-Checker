@@ -83,7 +83,6 @@ python transcription/stt_with_diarization_new.py Order1.mp3
 - Implementierung von Whisper und pyannote
 - Regelbasierte Gesprächstyp-Erkennung
 - IONOS-LLM-Anbindung
-- Präsentation
 
 ### Florian Wächter
 - Verwaltung des IONOS-Servers
@@ -105,3 +104,4 @@ python transcription/stt_with_diarization_new.py Order1.mp3
 - Backend-Entwicklung
 - OpenAI-Anbindung
 - OpenAI-Token
+- Präsentation
