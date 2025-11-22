@@ -58,7 +58,7 @@ export const ShowData = (props: {
     const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    
+
     const baseFileName = props.fileName?.replace(/\.[^/.]+$/, "") || "Analyse";
     link.download = `Bericht_${baseFileName}.json`;
     link.href = url;
@@ -81,7 +81,9 @@ export const ShowData = (props: {
 
       {/* Obere Hälfte: Ergebnis-Container */}
       <div className="container" style={{ width: "80%", maxWidth: "1200px" }}>
-        <h1 style={{ marginBottom: "20px", color: "#000" }}>Analyse Ergebnis</h1>
+        <h1 style={{ marginBottom: "20px", color: "#000" }}>
+          Analyse Ergebnis
+        </h1>
 
         <div
           style={{
@@ -106,30 +108,50 @@ export const ShowData = (props: {
             }}
           ></div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: "24px", fontWeight: "700", marginBottom: "10px", color: "#000" }}>
+            <div
+              style={{
+                fontSize: "24px",
+                fontWeight: "700",
+                marginBottom: "10px",
+                color: "#000",
+              }}
+            >
               {trafficLightColor === "#22c55e" && "🟢 Alle Prüfungen erfüllt"}
               {trafficLightColor === "#ef4444" &&
                 "🔴 Mindestens eine Prüfung nicht erfüllt"}
               {trafficLightColor === "#eab308" && "🟡 Teilweise erfüllt"}
             </div>
-            <p style={{ fontSize: "18px", color: "#000", margin: 0, fontWeight: "500" }}>
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#000",
+                margin: 0,
+                fontWeight: "500",
+              }}
+            >
               {allYes && !hasAnyNo
                 ? "Der Anruf ist konform mit den Vorschriften."
                 : "Der Anruf ist nicht konform mit den Vorschriften."}
             </p>
             {props.fileName && (
               <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>
-                📄 Analysierte Datei: <strong style={{ color: "#000" }}>{props.fileName}</strong>
+                📄 Analysierte Datei:{" "}
+                <strong style={{ color: "#000" }}>{props.fileName}</strong>
               </p>
             )}
             <p style={{ fontSize: "16px", color: "#333", marginTop: "10px" }}>
-              Gesprächstyp: <strong style={{ color: "#000" }}>{props.data.textType}</strong>
+              Gesprächstyp:{" "}
+              <strong style={{ color: "#000" }}>{props.data.textType}</strong>
             </p>
             <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>
-              Analysiert am: <strong style={{ color: "#000" }}>{analysisDate}</strong>
+              Analysiert am:{" "}
+              <strong style={{ color: "#000" }}>{analysisDate}</strong>
             </p>
             <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>
-              Prüfungsergebnis: <strong style={{ color: "#000" }}>{answeredQuestions} von {totalQuestions} Fragen erfüllt</strong>
+              Prüfungsergebnis:{" "}
+              <strong style={{ color: "#000" }}>
+                {answeredQuestions} von {totalQuestions} Fragen erfüllt
+              </strong>
               {unansweredQuestions > 0 && (
                 <span style={{ color: "#ef4444", marginLeft: "10px" }}>
                   ({unansweredQuestions} nicht erfüllt)
@@ -146,13 +168,18 @@ export const ShowData = (props: {
         style={{
           width: "80%",
           maxWidth: "1200px",
-          maxHeight: "500px",
-          overflow: "hidden",
           display: "flex",
           flexDirection: "column",
         }}
       >
-        <h2 style={{ marginBottom: "20px", paddingBottom: "15px", borderBottom: "2px solid #e5e7eb", color: "#000" }}>
+        <h2
+          style={{
+            marginBottom: "20px",
+            paddingBottom: "15px",
+            borderBottom: "2px solid #e5e7eb",
+            color: "#000",
+          }}
+        >
           Detaillierter Bericht
         </h2>
 
@@ -174,19 +201,20 @@ export const ShowData = (props: {
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = "translateY(-2px)";
-            e.currentTarget.style.boxShadow = "0 4px 12px rgba(102, 126, 234, 0.5)";
+            e.currentTarget.style.boxShadow =
+              "0 4px 12px rgba(102, 126, 234, 0.5)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 2px 8px rgba(102, 126, 234, 0.3)";
+            e.currentTarget.style.boxShadow =
+              "0 2px 8px rgba(102, 126, 234, 0.3)";
           }}
         >
           📥 Bericht als JSON herunterladen
         </button>
-        
+
         <div
           style={{
-            overflowY: "auto",
             padding: "20px",
             backgroundColor: "#f9fafb",
             borderRadius: "12px",
@@ -203,10 +231,19 @@ export const ShowData = (props: {
                   backgroundColor: "white",
                   borderRadius: "8px",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-                  borderLeft: `4px solid ${result.exists ? "#22c55e" : "#ef4444"}`,
+                  borderLeft: `4px solid ${
+                    result.exists ? "#22c55e" : "#ef4444"
+                  }`,
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginBottom: "10px",
+                  }}
+                >
                   <span style={{ fontSize: "24px" }}>
                     {result.exists ? "✅" : "❌"}
                   </span>
@@ -214,21 +251,46 @@ export const ShowData = (props: {
                     Frage {index + 1}:
                   </strong>
                 </div>
-                
-                <p style={{ fontSize: "15px", color: "#000", marginBottom: "12px", lineHeight: "1.6" }}>
+
+                <p
+                  style={{
+                    fontSize: "15px",
+                    color: "#000",
+                    marginBottom: "12px",
+                    lineHeight: "1.6",
+                  }}
+                >
                   {result.question}
                 </p>
 
-                <div style={{ display: "flex", gap: "20px", marginBottom: "10px", fontSize: "14px", color: "#000" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "20px",
+                    marginBottom: "10px",
+                    fontSize: "14px",
+                    color: "#000",
+                  }}
+                >
                   <div>
                     <strong>Erfüllt:</strong>{" "}
-                    <span style={{ color: result.exists ? "#22c55e" : "#ef4444", fontWeight: "600" }}>
+                    <span
+                      style={{
+                        color: result.exists ? "#22c55e" : "#ef4444",
+                        fontWeight: "600",
+                      }}
+                    >
                       {result.exists ? "Ja" : "Nein"}
                     </span>
                   </div>
                   <div>
                     <strong>Vertrauenswürdigkeit:</strong>{" "}
-                    <span style={{ color: result.confidence >= 0.7 ? "#22c55e" : "#eab308", fontWeight: "600" }}>
+                    <span
+                      style={{
+                        color: result.confidence >= 0.7 ? "#22c55e" : "#eab308",
+                        fontWeight: "600",
+                      }}
+                    >
                       {(result.confidence * 100).toFixed(0)}%
                     </span>
                   </div>
@@ -236,7 +298,9 @@ export const ShowData = (props: {
 
                 {result.textExtract && (
                   <div style={{ marginTop: "15px" }}>
-                    <strong style={{ fontSize: "14px", color: "#000" }}>Textauszug:</strong>
+                    <strong style={{ fontSize: "14px", color: "#000" }}>
+                      Textauszug:
+                    </strong>
                     <blockquote
                       style={{
                         backgroundColor: "#f0f2ff",
