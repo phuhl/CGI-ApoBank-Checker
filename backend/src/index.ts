@@ -50,9 +50,10 @@ app.post("/analyze", upload.single("file"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No MP3 file uploaded" });
   }
+  const path = req.file.path;
   console.log("Got request");
   const transcriptions = await Promise.all(
-    new Array(3).fill(0).map((_) => getTranscript(req.file.path)),
+    new Array(3).fill(0).map((_) => getTranscript(path)),
   );
 
   const transcription = (
