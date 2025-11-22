@@ -131,7 +131,7 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
   // From backend/src → project root: ../../
   const projectRoot = path.resolve(__dirname, "..", "..");
   const pythonBin = path.join(projectRoot, ".venv", "bin", "python3");
-  const scriptPath = path.join(projectRoot, "stt_with_diarization.py");
+  const scriptPath = path.join(projectRoot, "stt_with_diarization_new.py");
 
   return new Promise((resolve, reject) => {
     const child = spawn(pythonBin, [scriptPath, audioPath]);
@@ -189,6 +189,7 @@ export const getTranscript = async (fileName: string): Promise<string> => {
 
   // Easiest: just concatenate all text segments in order
   const transcript = segments.map((s) => s.text).join(" ");
+  console.log("Transcript", transcript)
   return transcript;
 };
 
@@ -199,3 +200,4 @@ export const getTranscriptWithSpeakers = async (
   const result = await runPythonStt(fileName);
   return result.segments_with_speaker ?? [];
 };
+
