@@ -131,7 +131,7 @@ const runPythonStt = (audioPath: string): Promise<PythonResult> => {
   // From backend/src → project root: ../../
   const projectRoot = path.resolve(__dirname, "..", "..");
   const pythonBin = path.join(projectRoot, ".venv", "bin", "python3");
-  const scriptPath = path.join(projectRoot, "stt_with_diarization.py");
+  const scriptPath = path.join(projectRoot, "stt_with_diarization_new.py");
 
   return new Promise((resolve, reject) => {
     const child = spawn(pythonBin, [scriptPath, audioPath]);
