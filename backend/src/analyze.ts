@@ -1,4 +1,4 @@
-import { askAiToClassify } from "./askAiNew";
+import { askAiToClassify } from "./askAi";
 import { categorizeText } from "./categorizeText";
 import { checkComplianceQuestions } from "./complianceQuestions";
 
