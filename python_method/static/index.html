@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>apoBank Call Audit System</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>apoBank Call Audit System</h1>
+
+    <div class="upload-box">
+        <h2>Upload Your Audio File</h2>
+        <p>Select an MP3, WAV, or M4A file to analyze.</p>
+
+        <input type="file" id="audioFile" accept=".mp3,.wav,.m4a" />
+        <button id="uploadBtn">Start Analysis</button>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Processing your audio… Please wait.</p>
+        </div>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Analysis Result</h2>
+
+        <div class="result-section">
+            <p><strong>Detected Conversation Type:</strong> <span id="convType"></span></p>
+            <p><strong>Ampel Status:</strong> <span id="ampel"></span></p>
+            <p><strong>Coverall Score:</strong> <span id="coverage"></span></p>
+        </div>
+
+        <h3>Checklist Evaluation</h3>
+        <table id="checklistTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Status</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button id="downloadTxt">Download TXT Report</button>
+        <button id="downloadExcel">Download Excel Report</button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
