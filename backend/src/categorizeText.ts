@@ -1,7 +1,13 @@
 import { askAiToClassify } from "./askAi";
+import { runKeywordScoring, ScoreResult } from "./get_keyword_score_type";
+import keywords  from "./keywords.json";
+//import * as path from "path";
 
 export const categorizeText = async (text: string) => {
-  return await askAiToClassify(
+
+  const keywordScores = runKeywordScoring(keywords, text);
+
+  const aioutput = await askAiToClassify(
     "gpt-4.1",
     `
   Analysiere einen gegebenen Gesprächstext und ordne ihn genau einem der folgenden sieben Gesprächstypen zu. Die Zuordnung erfolgt ausschließlich anhand des inhaltlichen Charakters des Gesprächs, der genannten Produktarten und der regulatorisch relevanten Elemente.
@@ -46,4 +52,9 @@ ${text}
       "Ohne Beratung – ausführlich",
     ],
   );
+
+  const score = keywordScores[aioutput]?.ratio ?? 0;
+  const keywordConfidence = score * 100;
+
+  return aioutput;
 };
