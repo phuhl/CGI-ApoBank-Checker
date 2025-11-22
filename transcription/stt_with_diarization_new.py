@@ -335,7 +335,7 @@ if __name__ == "__main__":
     import json
 
     if len(sys.argv) < 2:
-        print("Usage: python stt_with_diarization.py AUDIO_FILE", file=sys.stderr)
+        print("Usage: python stt_with_diarization_old.py AUDIO_FILE", file=sys.stderr)
         sys.exit(1)
 
     audio_file = sys.argv[1]

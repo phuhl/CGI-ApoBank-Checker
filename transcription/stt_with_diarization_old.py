@@ -245,7 +245,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) < 2:
-       # print("Usage: python stt_with_diarization.py path/to/audio.(wav|mp3) [output.json]")
+       # print("Usage: python stt_with_diarization_old.py path/to/audio.(wav|mp3) [output.json]")
         raise SystemExit(1)
 
     audio_file = sys.argv[1]
