@@ -13,7 +13,7 @@ const processQuestion = async (
 ) => {
   if (!negativePrompt) {
     const result = await askAiToClassify(
-      "gpt-4.1",
+      "gpt-5",
       `
   Du bist ein Compliance-Analyst, der ein Gespräch zwischen einem Bankberater
   und einem Kunden überprüft. Du musst feststellen, ob eine erforderliche
@@ -37,7 +37,7 @@ ${text}
     }
   } else {
     const result = await askAiToClassify(
-      "gpt-4.1",
+      "gpt-5",
       `
   Du bist ein Compliance-Analyst, der ein Gespräch zwischen einem Bankberater
   und einem Kunden überprüft. Du musst feststellen, ob eine
