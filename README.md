@@ -72,7 +72,12 @@ python transcription/stt_with_diarization_new.py Order1.mp3
 ## Aufgabenzuteilung
 
 ### Arta Karimzadeh
-- Demo-Video-Erstellung
+* Frontend-Basis (HTML/CSS/JS) für Audio-Analyse
+* Checkliste-Anpassen-Ansicht im Frontend  React
+* Excel-Checklisten zu JSON konvertiert
+* Python-Backend-Prototyp (FastAPI)
+* Audio-Upload & Analyse-Workflow  
+* Demo-Video-Erstellung
 
 ### Tobias Bergmann
 - Implementierung von Whisper und pyannote
